@@ -32,6 +32,12 @@ ifneq ($(strip $(BOARD_WITH_SPECIAL_PARTITIONS)), )
 partition_list := $(partition_list),$(BOARD_WITH_SPECIAL_PARTITIONS)
 endif
 
+# Added by ASUS: splash partition
+partition_list := $(partition_list),splash:16M
+
+# Added by ASUS: dtoverlay partition
+partition_list := $(partition_list),dtoverlay:16M
+
 ifeq ($(strip $(BOARD_SUPER_PARTITION_GROUPS)),rockchip_dynamic_partitions)
 partition_list := $(partition_list),super:$(BOARD_SUPER_PARTITION_SIZE)
 else # BOARD_USE_DYNAMIC_PARTITIONS

@@ -24,7 +24,7 @@ PRODUCT_KERNEL_CONFIG ?= tinker_board_3_defconfig
 
 # BOARD_AVB_ENABLE := true
 # used for fstab_generator, sdmmc controller address
-PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe330000.nandc
+PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe330000.nandc,fe2b0000.dwmmc
 
 SF_PRIMARY_DISPLAY_ORIENTATION := 0
 
@@ -118,3 +118,6 @@ PRODUCT_HAVE_OPTEE := true
 BOARD_ROCKCHIP_TRUST_MERGE_TO_UBOOT := true
 
 BOARD_BASEPARAMETER_SUPPORT := true
+
+# Add the partition dtoverlay
+BOARD_USES_DTOVERLAY_PARTITION := true
