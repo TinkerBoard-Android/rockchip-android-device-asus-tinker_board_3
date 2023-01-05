@@ -121,3 +121,7 @@ BOARD_BASEPARAMETER_SUPPORT := true
 
 # Add the partition dtoverlay
 BOARD_USES_DTOVERLAY_PARTITION := true
+
+# Remove the support for Rockchip PCBA Test
+TARGET_ROCKCHIP_PCBATEST := false
+
