@@ -1,0 +1,32 @@
+##### Hardware Interface Config #####
+
+## Note: When there is any PIN conflict, enable the latter setting.  ##
+## | PIN | ALT Fun 1 | ALT Fun 2 | ALT Fun 3 | ALT Fun4 | ##
+## |   2 |  i2s3_2ch |      spi3 |     pwm14 |          | ##
+## |   4 |  i2s3_2ch |      spi3 |     pwm15 |          | ##
+## |   6 |  i2s3_2ch |      spi3 | spdif_8ch |          | ##
+## |   8 |  i2s3_2ch |      spi3 |     pwm12 |    uart9 | ##
+## |  10 |  i2s3_2ch |      spi3 |     pwm13 |    uart9 | ##
+
+#intf:uart4=off
+#intf:i2c5=off
+#intf:uart9=off
+#intf:pwm12=off
+#intf:pwm13=off
+#intf:pwm14=off
+#intf:pwm15=off
+#intf:spdif_8ch=off
+#intf:spi3=off
+#intf:i2s3_2ch=off
+
+##### Driver Config #####
+
+## Note: auto_ums: Auto enable ums mode if typeC port detect power. ##
+
+conf:auto_ums=on
+
+##### List of device tree overlays to load. Format: overlay=<dtbo name, no extension> <dtbo2> ... #####
+
+## Note: Put dtbo files under the overlays folder. ##
+
+overlay=
