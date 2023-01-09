@@ -5,3 +5,5 @@ on init
 on late-init
 
 on boot
+	chown system shell /sys/class/hwmon/hwmon0/pwm1
+	chown system shell /sys/class/hwmon/hwmon0/fan1_input
