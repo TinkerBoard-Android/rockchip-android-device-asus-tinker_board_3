@@ -8,6 +8,7 @@ on late-init
 on boot
 	chown system shell /sys/class/hwmon/hwmon0/pwm1
 	chown system shell /sys/class/hwmon/hwmon0/fan1_input
+        setprop vendor.asus_debugger_running 0
 
 on property:sys.boot_completed=1
     #HDMI CEC
@@ -20,3 +21,34 @@ service vendor.led /vendor/bin/led.sh
     group root
     disabled
     oneshot
+
+# asus-debugger-d
+service asus-dbug-d /vendor/bin/asus-debugger-d
+    user root
+    group root log
+    group root system
+    disabled
+
+on property:sys.asus_debugger_running=1
+    start asus-dbug-d
+
+on property:persist.sys.run_debugger=1
+    start asus-dbug-d
+    setprop vendor.run_debugger 1
+
+on property:persist.sys.run_debugger=0
+    setprop vendor.run_debugger 0
+
+on property:sys.asus_debugger_running=3
+    stop asus-dbug-d
+    setprop vendor.asus_debugger_running 3
+
+on property:sys.asus_debugger_running=1
+    restorecon /dev/socket/asus-debugger
+
+on property:sys.asus_debugger_running=2
+    restorecon /dev/socket/asus-debugger
+
+on property:vendor.asus_debugger_running=2
+    setprop sys.asus_debugger_running 2
+
