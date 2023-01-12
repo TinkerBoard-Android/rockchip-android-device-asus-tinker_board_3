@@ -14,6 +14,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     RockchipPinnerService
 
+#DMClient
+PRODUCT_PACKAGES += \
+    DMClient
+
 # Disable partial updates
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.use_partial_updates=false
