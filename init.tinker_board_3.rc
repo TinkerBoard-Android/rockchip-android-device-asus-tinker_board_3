@@ -1,7 +1,8 @@
 on early-init
 
 on init
-
+    # led
+    start vendor.led
 on late-init
 
 on boot
@@ -12,3 +13,10 @@ on property:sys.boot_completed=1
     #HDMI CEC
     chown root system /dev/cec0
     chmod 0664 /dev/cec0
+
+service vendor.led /vendor/bin/led.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
