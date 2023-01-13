@@ -140,4 +140,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.rk30board.no_sdmmc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board
 
 BOARD_SEPOLICY_DIRS += \
-    device/asus/tinker_board_3/sepolicy/dtoverlay
+    device/asus/tinker_board_3/sepolicy/dtoverlay \
+    device/asus/tinker_board_3/sepolicy/AsusDebugger
