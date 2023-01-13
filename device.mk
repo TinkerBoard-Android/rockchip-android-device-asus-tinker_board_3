@@ -39,6 +39,22 @@ ifeq ($(HOST_OS),linux)
   TARGET_USERIMAGES_USE_F2FS := true
 endif
 
+# hdmi cec
+ifneq ($(filter atv box tablet, $(strip $(TARGET_BOARD_PLATFORM_PRODUCT))), )
+BOARD_SHOW_HDMI_SETTING := true
+PRODUCT_COPY_FILES += \
+	frameworks/native/data/etc/android.hardware.hdmi.cec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.hdmi.cec.xml
+
+PRODUCT_PROPERTY_OVERRIDES += ro.hdmi.device_type=4
+PRODUCT_PACKAGES += \
+	hdmi_cec.$(TARGET_BOARD_PLATFORM)
+
+# HDMI CEC HAL
+PRODUCT_PACKAGES += \
+    android.hardware.tv.cec@1.0-impl \
+    android.hardware.tv.cec@1.0-service
+endif
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.recovery.rk30board.rc:recovery/root/init.recovery.rk30board.rc \
     vendor/rockchip/common/bin/$(TARGET_ARCH)/busybox:recovery/root/sbin/busybox
