@@ -1,0 +1,4 @@
+allow rild self:packet_socket { create bind write read };
+allow rild apex_mnt_dir:dir open;
+allow rild system_data_file:dir search;
+allow rild usb_serial_device:chr_file { ioctl open read write };
