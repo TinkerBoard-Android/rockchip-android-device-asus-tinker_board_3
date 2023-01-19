@@ -21,7 +21,7 @@ odm     /odm      ext4 ro,barrier=1 wait,logical,first_stage_mount
 
 /dev/block/zram0                                none                swap      defaults                                              zramsize=50%
 # For sdmmc
-/devices/platform/fe310000.sdhci/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto
+/devices/platform/fe2b0000.dwmmc/mmc_host*        auto  auto    defaults        voldmanaged=sdcard1:auto
 
 # Added by ASUS
 /dev/block/by-name/splash       /splash             emmc      defaults     defaults
