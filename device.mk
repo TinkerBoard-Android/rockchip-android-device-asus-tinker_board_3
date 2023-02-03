@@ -139,6 +139,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.rk30board.sd:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board.sd \
     $(LOCAL_PATH)/fstab.rk30board.no_sdmmc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board
 
+PRODUCT_COPY_FILES += \
+    device/asus/tinker_board_3/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml
+
 BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/dtoverlay \
     device/asus/tinker_board_3/sepolicy/AsusDebugger
