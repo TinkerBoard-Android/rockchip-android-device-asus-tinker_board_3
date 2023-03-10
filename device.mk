@@ -125,7 +125,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.custom_ecc=1 \
     rild.libpath=/vendor/lib64/hw/libreference-ril.so \
     vendor.rild.libpath=/vendor/lib64/hw/libreference-ril.so \
-    vendor.rild.libargs=-d/dev/ttyUSB2 \
     persist.vendor.radio.procedure_bytes=SKIP \
     persist.radio.multisim.config=ssss \
     persist.vendor.radio.rat_on=combine
