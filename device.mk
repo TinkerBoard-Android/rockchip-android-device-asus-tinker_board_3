@@ -213,3 +213,6 @@ BOARD_SEPOLICY_DIRS += \
 # Include thermal HAL module
 BOARD_ROCKCHIP_THERMAL := true
 $(call inherit-product, device/rockchip/common/modules/thermal.mk)
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/cpu_gpu_utility.sh:$(TARGET_COPY_OUT_VENDOR)/bin/cpu_gpu_utility.sh
