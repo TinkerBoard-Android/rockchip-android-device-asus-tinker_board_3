@@ -1,0 +1,4 @@
+allow hal_gnss_default rild:unix_stream_socket connectto;
+allow hal_gnss_default default_prop:file { getattr };
+vndbinder_use(hal_gnss_default)
+

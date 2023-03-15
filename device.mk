@@ -146,7 +146,8 @@ DEVICE_MANIFEST_FILE += \
     device/asus/tinker_board_3/cellular/radio_manifest.xml
 
 BOARD_SEPOLICY_DIRS += \
-    device/asus/tinker_board_3/sepolicy/cellular
+    device/asus/tinker_board_3/sepolicy/cellular \
+    device/asus/tinker_board_3/sepolicy/gps
 
 # Get the long list of APNs
 PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
@@ -216,3 +217,11 @@ $(call inherit-product, device/rockchip/common/modules/thermal.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/cpu_gpu_utility.sh:$(TARGET_COPY_OUT_VENDOR)/bin/cpu_gpu_utility.sh
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/arm64-v8a/gps.default.so:vendor/lib64/hw/gps.default.so \
+    $(LOCAL_PATH)/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
+
