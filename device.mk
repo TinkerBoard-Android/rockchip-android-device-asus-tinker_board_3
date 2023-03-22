@@ -225,3 +225,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/arm64-v8a/gps.default.so:vendor/lib64/hw/gps.default.so \
     $(LOCAL_PATH)/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
 
+# Add CAN-utils
+PRODUCT_PACKAGES += \
+    libcan \
+    candump \
+    cansend
+
