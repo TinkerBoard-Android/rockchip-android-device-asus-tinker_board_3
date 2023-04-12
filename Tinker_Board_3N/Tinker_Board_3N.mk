@@ -20,7 +20,7 @@ PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
-include device/asus/tinker_board_3/Tinker_Board_3/BoardConfig.mk
+include device/asus/tinker_board_3/Tinker_Board_3N/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
 $(call inherit-product, device/asus/tinker_board_3/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
@@ -31,10 +31,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/../overlay
 
 PRODUCT_CHARACTERISTICS := tablet
 
-PRODUCT_NAME := Tinker_Board_3
-PRODUCT_DEVICE := Tinker_Board_3
+PRODUCT_NAME := Tinker_Board_3N
+PRODUCT_DEVICE := Tinker_Board_3N
 PRODUCT_BRAND := asus
-PRODUCT_MODEL := Tinker Board 3
+PRODUCT_MODEL := Tinker Board 3N
 PRODUCT_MANUFACTURER := asus
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 #

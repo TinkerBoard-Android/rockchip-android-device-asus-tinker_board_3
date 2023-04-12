@@ -17,10 +17,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a55
 
-PRODUCT_UBOOT_CONFIG ?= tinker_board_3
+#PRODUCT_UBOOT_CONFIG ?= tinker_board_3
 PRODUCT_KERNEL_ARCH ?= arm64
-PRODUCT_KERNEL_DTS ?= rk3568-tinker_board_3
-PRODUCT_KERNEL_CONFIG ?= tinker_board_3_defconfig
+#PRODUCT_KERNEL_DTS ?= rk3568-tinker_board_3
+#PRODUCT_KERNEL_CONFIG ?= tinker_board_3_defconfig
 
 # BOARD_AVB_ENABLE := true
 # used for fstab_generator, sdmmc controller address
