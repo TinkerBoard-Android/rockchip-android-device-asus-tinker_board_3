@@ -32,6 +32,7 @@
 				lvds-bpp = <24>;
 				de-mode;
 				Tinker3;
+				enable-overlay;
 				//test-pattern;
 			};
 		};

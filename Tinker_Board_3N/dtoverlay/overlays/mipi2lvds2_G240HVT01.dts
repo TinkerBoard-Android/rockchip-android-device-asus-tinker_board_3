@@ -30,6 +30,7 @@
 				dual-link;
 				de-mode;
 				Tinker3;
+				enable-overlay;
 				//test-pattern;
 			};
 		};
