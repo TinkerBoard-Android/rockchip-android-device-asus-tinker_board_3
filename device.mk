@@ -231,8 +231,3 @@ PRODUCT_PACKAGES += \
     libcan \
     candump \
     cansend
-
-# Add libmraa
-PRODUCT_PACKAGES += \
-    libmraa \
-    libmraajava \

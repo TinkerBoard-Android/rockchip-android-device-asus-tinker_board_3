@@ -48,3 +48,9 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 # Append the manifest files for Tinker Board 2 here since this will be defined
 # in device/rockchip/common/BoardConfig.mk to use the default one.
 DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/manifest.xml
+
+ifeq ($(strip $(PRODUCT_NAME)), Tinker_Board_3N)
+PRODUCT_PACKAGES += \
+    libmraa \
+    libmraajava
+endif
