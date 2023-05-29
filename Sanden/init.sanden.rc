@@ -1,0 +1,84 @@
+# Sanden
+on early-init
+
+on init
+    # led
+    start vendor.led
+on late-init
+
+on boot
+	chown system shell /sys/class/hwmon/hwmon0/pwm1
+	chown system shell /sys/class/hwmon/hwmon0/fan1_input
+        setprop vendor.asus_debugger_running 0
+
+    # for bmp splash
+    chmod 0666 /dev/block/mmcblk2p13
+    chmod 0666 /dev/block/mmcblk1p13
+
+# For power manager
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/governor
+
+on property:sys.boot_completed=1
+    #HDMI CEC
+    chown root system /dev/cec0
+    chmod 0664 /dev/cec0
+
+service vendor.led /vendor/bin/led.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+# asus-debugger-d
+service asus-dbug-d /vendor/bin/asus-debugger-d
+    user root
+    group root log
+    group root system
+    disabled
+
+service cpu_gpu_utility /vendor/bin/cpu_gpu_utility.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:sys.asus_debugger_running=1
+    start asus-dbug-d
+
+on property:persist.sys.run_debugger=1
+    start asus-dbug-d
+    setprop vendor.run_debugger 1
+
+on property:persist.sys.run_debugger=0
+    setprop vendor.run_debugger 0
+
+on property:sys.asus_debugger_running=3
+    stop asus-dbug-d
+    setprop vendor.asus_debugger_running 3
+
+on property:sys.asus_debugger_running=1
+    restorecon /dev/socket/asus-debugger
+
+on property:sys.asus_debugger_running=2
+    restorecon /dev/socket/asus-debugger
+
+on property:vendor.asus_debugger_running=2
+    setprop sys.asus_debugger_running 2
+
+on property:vendor.boot_completed=1
+    start cpu_gpu_utility
+
+# For 12 Pin
+    chmod 0666 /dev/gpiochip3
+    chmod 0666 /dev/gpiochip4
+    chmod 0666 /dev/i2c-5
+    chmod 0666 /dev/spidev3.0
+    chmod 0666 /dev/spidev3.1
+    chmod 0666 /dev/ttyS4
+    chmod 0666 /dev/ttyS9

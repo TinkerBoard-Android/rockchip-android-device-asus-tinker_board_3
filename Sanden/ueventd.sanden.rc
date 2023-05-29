@@ -1,3 +1,4 @@
+# Sanden
 #for sensors
 /dev/mma8452_daemon       0660   system     system
 /dev/akm8975_dev          0660   system     system

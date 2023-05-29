@@ -1,4 +1,5 @@
 # zygote need to be started after otapreopt which will be done on post-fs-data
+# Tinker Board 3N
 on zygote-start
 
 # for bluetooth

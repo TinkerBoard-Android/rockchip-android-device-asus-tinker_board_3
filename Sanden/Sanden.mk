@@ -20,7 +20,7 @@ PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
-include device/asus/tinker_board_3/Tinker_Board_3N/BoardConfig.mk
+include device/asus/tinker_board_3/Sanden/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
 $(call inherit-product, device/asus/tinker_board_3/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
@@ -31,11 +31,11 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/../overlay
 
 PRODUCT_CHARACTERISTICS := tablet
 
-PRODUCT_NAME := Tinker_Board_3N
-PRODUCT_DEVICE := Tinker_Board_3N
-PRODUCT_BRAND := asus
-PRODUCT_MODEL := Tinker Board 3N
-PRODUCT_MANUFACTURER := asus
+PRODUCT_NAME := Sanden
+PRODUCT_DEVICE := Sanden
+PRODUCT_BRAND := toshiba
+PRODUCT_MODEL := Sanden
+PRODUCT_MANUFACTURER := toshiba
 PRODUCT_AAPT_PREF_CONFIG := hdpi
 #
 ## add Rockchip properties
@@ -49,13 +49,13 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 # in device/rockchip/common/BoardConfig.mk to use the default one.
 DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/manifest.xml
 
-ifeq ($(strip $(PRODUCT_NAME)), Tinker_Board_3N)
+ifeq ($(strip $(PRODUCT_NAME)), Sanden)
 PRODUCT_PACKAGES += \
     libmraa \
     libmraajava
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3n.rc \
-    $(LOCAL_PATH)/ueventd.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(LOCAL_PATH)/init.connectivity.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc \
+    $(LOCAL_PATH)/init.sanden.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sanden.rc \
+    $(LOCAL_PATH)/ueventd.sanden.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/init.connectivity.sanden.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc \

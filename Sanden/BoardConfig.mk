@@ -22,14 +22,14 @@ BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false
 
 ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
     include device/rockchip/common/BoardConfig_AB.mk
-    TARGET_RECOVERY_FSTAB := device/asus/tinker_board_3/Tinker_Board_3N/recovery.fstab_AB
+    TARGET_RECOVERY_FSTAB := device/asus/tinker_board_3/Sanden/recovery.fstab_AB
 endif
 
-PRODUCT_UBOOT_CONFIG := tinker_board_3n
-PRODUCT_KERNEL_DTS := rk3568-tinker_board_3n
-PRODUCT_KERNEL_CONFIG ?= tinker_board_3n_defconfig
+PRODUCT_UBOOT_CONFIG := sanden
+PRODUCT_KERNEL_DTS := rk3568-sanden
+PRODUCT_KERNEL_CONFIG ?= sanden_defconfig
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Tinker_Board_3N/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Sanden/bluetooth
