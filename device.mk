@@ -229,3 +229,15 @@ PRODUCT_PACKAGES += \
     libcan \
     candump \
     cansend
+
+ifeq ($(strip $(PRODUCT_ASUS_NAME)), Sanden)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Sanden/init.sanden.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sanden.rc \
+    $(LOCAL_PATH)/Sanden/ueventd.sanden.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/Sanden/init.connectivity.sanden.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+else ifeq ($(strip $(PRODUCT_ASUS_NAME)), Tinker_Board_3N)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Tinker_Board_3N/init.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3n.rc \
+    $(LOCAL_PATH)/Tinker_Board_3N/ueventd.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/Tinker_Board_3N/init.connectivity.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+endif

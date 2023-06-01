@@ -19,6 +19,8 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
+PRODUCT_ASUS_NAME := Tinker_Board_3N
+
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/asus/tinker_board_3/Tinker_Board_3N/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
@@ -55,7 +57,3 @@ PRODUCT_PACKAGES += \
     libmraajava
 endif
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3n.rc \
-    $(LOCAL_PATH)/ueventd.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(LOCAL_PATH)/init.connectivity.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc \
