@@ -58,3 +58,11 @@ PRODUCT_PACKAGES += \
     libmraajava
 endif
 
+PRODUCT_PACKAGES += \
+    Termux \
+    Magisk.apk
+
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/prebuild/apps/Magisk/install_magisk.sh:$(TARGET_COPY_OUT_VENDOR)/bin/install_magisk.sh \
+     $(LOCAL_PATH)/prebuild/apps/Magisk/com.topjohnwu.magisk_preferences.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/com.topjohnwu.magisk_preferences.xml
+

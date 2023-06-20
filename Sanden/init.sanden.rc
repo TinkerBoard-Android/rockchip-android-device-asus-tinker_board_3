@@ -48,6 +48,14 @@ service cpu_gpu_utility /vendor/bin/cpu_gpu_utility.sh
     disabled
     oneshot
 
+# Magisk app
+service install-magisk /vendor/bin/install_magisk.sh
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+
 on property:sys.asus_debugger_running=1
     start asus-dbug-d
 
@@ -73,6 +81,7 @@ on property:vendor.asus_debugger_running=2
 
 on property:vendor.boot_completed=1
     start cpu_gpu_utility
+    start install-magisk
 
 # For 12 Pin
     chmod 0666 /dev/gpiochip3
