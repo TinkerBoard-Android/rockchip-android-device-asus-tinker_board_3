@@ -46,6 +46,7 @@ PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
 PRODUCT_PROPERTY_OVERRIDES += ro.wifi.sleep.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
 PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 
 # Append the manifest files for Tinker Board 2 here since this will be defined
 # in device/rockchip/common/BoardConfig.mk to use the default one.
