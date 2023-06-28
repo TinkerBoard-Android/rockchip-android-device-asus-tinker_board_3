@@ -60,6 +60,7 @@ endif
 
 PRODUCT_PACKAGES += \
     Termux \
+    Gboard \
     Magisk.apk
 
 PRODUCT_COPY_FILES += \
