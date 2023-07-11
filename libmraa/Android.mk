@@ -1,5 +1,5 @@
-ifeq ($(strip $(PRODUCT_NAME)), Tinker_Board_3N)
-ifeq ($(strip $(PRODUCT_NAME)), Sanden)
+ifeq ($(PRODUCT_NAME), $(filter $(PRODUCT_NAME),Tinker_Board_3N Sanden_VM Sanden_CM))
+
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
@@ -26,6 +26,3 @@ LOCAL_SRC_FILES_64 := lib64/libmraajava.so
 LOCAL_MODULE_TARGET_ARCH:= arm64
 include $(BUILD_PREBUILT)
 endif
-endif
-
-

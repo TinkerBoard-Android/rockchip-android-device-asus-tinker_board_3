@@ -16,10 +16,13 @@
 
 PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/Tinker_Board_3N/Tinker_Board_3N.mk \
-	$(LOCAL_DIR)/Sanden/Sanden.mk \
+	$(LOCAL_DIR)/Sanden_VM/Sanden_VM.mk \
+	$(LOCAL_DIR)/Sanden_CM/Sanden_CM.mk \
 
 COMMON_LUNCH_CHOICES := \
     Tinker_Board_3N-userdebug \
     Tinker_Board_3N-user \
-    Sanden-userdebug \
-    Sanden-user \
+    Sanden_VM-userdebug \
+    Sanden_VM-user \
+    Sanden_CM-userdebug \
+    Sanden_CM-user \
