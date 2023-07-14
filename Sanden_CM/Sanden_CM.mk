@@ -58,8 +58,6 @@ PRODUCT_PACKAGES += \
     libmraajava
 
 PRODUCT_PACKAGES += \
-    Termux \
-    Gboard \
     Magisk.apk
 endif
 
