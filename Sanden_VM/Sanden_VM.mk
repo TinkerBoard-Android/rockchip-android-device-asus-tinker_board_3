@@ -58,6 +58,7 @@ PRODUCT_PACKAGES += \
     libmraajava
 
 PRODUCT_PACKAGES += \
+    Gboard \
     Magisk.apk
 endif
 
