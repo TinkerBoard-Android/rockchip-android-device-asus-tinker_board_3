@@ -8,16 +8,16 @@
 ## |   8 |  i2s3_2ch |      spi3 |     pwm12 |    uart9 | ##
 ## |  10 |  i2s3_2ch |      spi3 |     pwm13 |    uart9 | ##
 
-#intf:uart4=on
-#intf:i2c5=on
-#intf:uart9=on
-#intf:pwm12=on
-#intf:pwm13=on
-#intf:pwm14=on
-#intf:pwm15=on
+#intf:uart4=off
+#intf:i2c5=off
+#intf:uart9=off
+#intf:pwm12=off
+#intf:pwm13=off
+#intf:pwm14=off
+#intf:pwm15=off
 #intf:spdif_8ch=on
-#intf:spi3=on
-#intf:i2s3_2ch=on
+#intf:spi3=off
+#intf:i2s3_2ch=off
 
 ##### Driver Config #####
 
