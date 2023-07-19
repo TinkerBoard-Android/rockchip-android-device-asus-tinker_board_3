@@ -48,7 +48,7 @@
 				height-mm = <193>;
 				bpc=<8>;
 				bus-format = <0x100a>;//<MEDIA_BUS_FMT_RGB888_1X24>;
-				dsi,flags = <0xA03>;//101000000011
+				dsi,flags = <0x03>;//101000000011
 				dsi,format = <0>;//MIPI_DSI_FMT_RGB888:
 				dsi,lanes = <4>;
 
