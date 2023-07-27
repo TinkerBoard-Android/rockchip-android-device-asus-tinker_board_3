@@ -9,7 +9,7 @@
 ## |  10 |  i2s3_2ch |      spi3 |     pwm13 |    uart9 | ##
 
 #intf:uart4=off
-#intf:i2c5=off
+intf:i2c5=on
 #intf:uart9=off
 #intf:pwm12=off
 #intf:pwm13=off
@@ -36,4 +36,4 @@ a55_maxfreq=1992000
 
 ## Note: Put dtbo files under the overlays folder. ##
 
-overlay=mipi2lvds2_TX18D211VM0BXA
+overlay=i2c5_egalax mipi2lvds2_TX18D211VM0BXA
