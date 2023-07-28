@@ -36,4 +36,4 @@ a55_maxfreq=1992000
 
 ## Note: Put dtbo files under the overlays folder. ##
 
-overlay=
+overlay=mipi2lvds2_G101EAN02
