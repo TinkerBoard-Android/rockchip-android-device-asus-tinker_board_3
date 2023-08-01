@@ -14,6 +14,7 @@
 		__overlay__ {
 			status = "okay";
 			panel-type = "LVDS";
+			pwm-pre-pull-low;
 			pwms = <&pwm6 0 5000000 0>;
 			enable_delay = <10>;
 			disable_delay = <10>;
@@ -57,7 +58,7 @@
 				t4=<0>;//LVDS signal to turn VCC off
 				t5=<1000>;//VCC off to turn VCC on
 				t6=<0>;//Backlight sys Enable to turn Backlight on
-				t7=<0>;//Backlight off to Backlight sys Disable
+				t7=<10>;//Backlight off to Backlight sys Disable
 				//t1 -> t2-t6 -> t6 -> t3 -> t7 -> t4 -> t5
 
 				disp_timings0: display-timings {
