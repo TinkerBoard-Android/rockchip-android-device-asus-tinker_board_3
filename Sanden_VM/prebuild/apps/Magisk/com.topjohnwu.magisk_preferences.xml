@@ -2,5 +2,5 @@
 <map>
     <string name="update_channel">-1</string>
     <string name="su_auto_response">2</string>
-    <string name="su_notification">1</string>
+    <string name="su_notification">0</string>
 </map>
