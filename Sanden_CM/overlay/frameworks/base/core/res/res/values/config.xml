@@ -161,5 +161,8 @@
          2: gestures only for back, home and overview -->
     <integer name="config_navBarInteractionMode">0</integer>
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
+    <!-- If true, then we do not ask user for permission for apps to connect to USB devices.
+         Do not set this to true for production devices. Doing so will cause you to fail CTS. -->
+    <bool name="config_disableUsbPermissionDialogs">true</bool>
 </resources>
 
