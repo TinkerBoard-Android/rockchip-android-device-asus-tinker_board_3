@@ -66,3 +66,7 @@ PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/prebuild/apps/Magisk/install_magisk.sh:$(TARGET_COPY_OUT_VENDOR)/bin/install_magisk.sh \
      $(LOCAL_PATH)/prebuild/apps/Magisk/com.topjohnwu.magisk_preferences.xml:$(TARGET_COPY_OUT_VENDOR)/overlay/com.topjohnwu.magisk_preferences.xml
 
+
+SF_PRIMARY_DISPLAY_ORIENTATION := 90
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.surface_flinger.primary_display_orientation=ORIENTATION_$(SF_PRIMARY_DISPLAY_ORIENTATION)
