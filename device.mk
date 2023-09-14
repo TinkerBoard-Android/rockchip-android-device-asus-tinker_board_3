@@ -191,6 +191,8 @@ PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bin/$(TARGET_ARCH)/parted:recovery/root/sbin/parted \
     vendor/rockchip/common/bin/$(TARGET_ARCH)/sgdisk:recovery/root/sbin/sgdisk
 
+ifeq ($(strip $(BOARD_AVB_ENABLE)), false)
+ifeq ($(strip $(BOARD_USES_AB_IMAGE)), false)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery.fstab.emmc:recovery/root/system/etc/recovery.fstab.emmc \
     $(LOCAL_PATH)/fstab.rk30board.emmc:$(TARGET_COPY_OUT_RAMDISK)/fstab.rk30board.emmc \
@@ -199,6 +201,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/fstab.rk30board.sd:$(TARGET_COPY_OUT_RAMDISK)/fstab.rk30board.sd \
     $(LOCAL_PATH)/fstab.rk30board.sd:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board.sd \
     $(LOCAL_PATH)/fstab.rk30board.no_sdmmc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board
+endif
+endif
 
 PRODUCT_COPY_FILES += \
     device/asus/tinker_board_3/external_camera_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/external_camera_config.xml

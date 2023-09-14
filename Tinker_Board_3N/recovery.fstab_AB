@@ -21,3 +21,6 @@ odm_dlkm    /odm_dlkm    ext4 ro,barrier=1 wait,slotselect,logical,first_stage_m
 /dev/block/zram0                                none                swap      defaults                                              zramsize=50%
 
 /dev/block/by-name/userdata              /data                f2fs             defaults                  defaults
+# Added by ASUS
+/dev/block/by-name/splash           /splash                emmc             defaults                  defaults
+/dev/block/by-name/dtoverlay           /dtoverlay                vfat             defaults                  defaults

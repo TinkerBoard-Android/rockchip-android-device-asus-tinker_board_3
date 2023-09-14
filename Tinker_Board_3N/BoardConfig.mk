@@ -33,3 +33,6 @@ BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Tinker_Board_3N/bluetooth
+TARGET_ROCKCHIP_PCBATEST := false
+
+PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3N/fstab.in

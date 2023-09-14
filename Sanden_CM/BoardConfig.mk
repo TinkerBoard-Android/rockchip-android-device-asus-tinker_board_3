@@ -36,3 +36,6 @@ BOARD_GRAVITY_SENSOR_SUPPORT := false
 BOARD_LIGHT_SENSOR_SUPPORT := true
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Sanden_CM/bluetooth
+TARGET_ROCKCHIP_PCBATEST := false
+
+PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Sanden_CM/fstab.in
