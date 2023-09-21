@@ -4,4 +4,10 @@ type cpu_gpu_utility_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(cpu_gpu_utility)
 
 dontaudit cpu_gpu_utility sysfs:file rw_file_perms;
+allow cpu_gpu_utility vendor_file:file execute_no_trans;
+allow cpu_gpu_utility vendor_toolbox_exec:file execute_no_trans;
+allow cpu_gpu_utility sysfs_devices_system_cpu:file write;
+allow cpu_gpu_utility vfat:dir search;
+allow cpu_gpu_utility vfat:file read;
+allow cpu_gpu_utility vfat:file open;
 
