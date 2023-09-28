@@ -33,6 +33,8 @@ BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Sanden_VM/bluetooth
+ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
 TARGET_ROCKCHIP_PCBATEST := false
+endif
 
 PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Sanden_VM/fstab.in
