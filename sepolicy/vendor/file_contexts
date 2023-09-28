@@ -3,3 +3,10 @@
 
 # for device
 /dev/block/by-name/splash                       u:object_r:splash_block_device:s0
+
+# hwmon
+/sys/devices/platform/pwm-fan/hwmon    u:object_r:sysfs_hwmon:s0
+/sys/devices/platform/pwm-fan/hwmon/hwmon0     u:object_r:sysfs_hwmon:s0
+/sys/devices/platform/pwm-fan/hwmon/hwmon0/name u:object_r:sysfs_hwmon:s0
+/sys/devices/platform/pwm-fan/hwmon/hwmon0/pwm1 u:object_r:sysfs_hwmon:s0
+/sys/devices/platform/pwm-fan/hwmon/hwmon0/fan1_input u:object_r:sysfs_hwmon:s0

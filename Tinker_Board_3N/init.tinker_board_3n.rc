@@ -7,9 +7,17 @@ on init
 on late-init
 
 on boot
-	chown system shell /sys/class/hwmon/hwmon0/pwm1
-	chown system shell /sys/class/hwmon/hwmon0/fan1_input
-        setprop vendor.asus_debugger_running 0
+	chown system shell /sys/devices/platform/pwm-fan/hwmon
+	chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon0
+	chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon0/name
+	chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon0/pwm1
+	chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon0/fan1_input
+	chmod 0776 /sys/devices/platform/pwm-fan/hwmon/hwmon0
+	chmod 0444 /sys/devices/platform/pwm-fan/hwmon/hwmon0/name
+	chmod 0666 /sys/devices/platform/pwm-fan/hwmon/hwmon0/pwm1
+	chmod 0444 /sys/devices/platform/pwm-fan/hwmon/hwmon0/fan1_input
+
+	setprop vendor.asus_debugger_running 0
 
     # for bmp splash
     chmod 0666 /dev/block/mmcblk2p13
