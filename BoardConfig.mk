@@ -129,3 +129,6 @@ BUILD_BROKEN_DUP_RULES := true
 
 # Disable MULTIAUDIO for RK3568
 BOARD_SUPPORT_MULTIAUDIO := false
+
+# For cellular
+BOARD_SUPPORT_MODEM := true

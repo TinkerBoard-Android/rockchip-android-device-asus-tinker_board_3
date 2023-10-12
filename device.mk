@@ -86,71 +86,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level-2020-03-01.xml \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2021-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level-2021-03-01.xml
 
-# Cellular
-PRODUCT_PACKAGES += \
-    CarrierDefaultApp \
-    CarrierConfig \
-    rild \
-    libril \
-    libreference-ril \
-    usb_dongle \
-    radio_dependencies \
-    dhcpcd \
-
-EXTRA_VENDOR_LIBRARIES += \
-    android.hardware.radio@1.0 \
-    android.hardware.radio@1.1 \
-    android.hardware.radio@1.2 \
-    android.hardware.radio@1.3 \
-    android.hardware.radio@1.4 \
-    android.hardware.radio@1.5 \
-    android.hardware.radio@1.6 \
-    android.hardware.radio.config@1.0-service \
-    android.hardware.radio.config@1.0 \
-    android.hardware.radio.config@1.1 \
-    android.hardware.radio.config@1.2 \
-    android.hardware.radio.config@1.3 \
-    android.hardware.radio.deprecated@1.0 \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.1 \
-    android.hardware.secure_element@1.2
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.noril=false \
-    ro.radio.noril=false \
-    ro.telephony.default_network=26 \
-    persist.vendor.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.sib16_support=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    rild.libpath=/vendor/lib64/hw/libreference-ril.so \
-    vendor.rild.libpath=/vendor/lib64/hw/libreference-ril.so \
-    persist.vendor.radio.procedure_bytes=SKIP \
-    persist.radio.multisim.config=ssss \
-    persist.vendor.radio.rat_on=combine
-
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/cellular/rild.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/rild.rc \
-    $(LOCAL_PATH)/cellular/libreference-ril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/libreference-ril.so \
-    $(LOCAL_PATH)/cellular/libril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libril.so \
-    $(LOCAL_PATH)/cellular/ql-ril.conf:$(TARGET_COPY_OUT_VENDOR)/etc/ql-ril.conf \
-    $(LOCAL_PATH)/cellular/chat:/system/bin/chat \
-    $(LOCAL_PATH)/cellular/ip-down:/system/etc/ppp/ip-down \
-    $(LOCAL_PATH)/cellular/ip-up:/system/etc/ppp/ip-up \
-    $(LOCAL_PATH)/cellular/dhcpcd:$(TARGET_COPY_OUT_VENDOR)/bin/dhcpcd
-
-DEVICE_MATRIX_FILE += \
-    device/asus/tinker_board_3/cellular/radio_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE += \
-    device/asus/tinker_board_3/cellular/radio_manifest.xml
-
-BOARD_SEPOLICY_DIRS += \
-    device/asus/tinker_board_3/sepolicy/cellular \
-    device/asus/tinker_board_3/sepolicy/gps
-
-# Get the long list of APNs
-PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/apns-full-conf.xml:system/etc/apns-conf.xml
-PRODUCT_COPY_FILES += vendor/rockchip/common/phone/etc/spn-conf.xml:system/etc/spn-conf.xml
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.ota.host = 192.168.1.1:8888 \
     ro.vendor.sdkversion = $(CURRENT_SDK_VERSION) \
@@ -220,6 +155,9 @@ $(call inherit-product, device/rockchip/common/modules/thermal.mk)
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/cpu_gpu_utility.sh:$(TARGET_COPY_OUT_VENDOR)/bin/cpu_gpu_utility.sh
+
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy/gps
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
