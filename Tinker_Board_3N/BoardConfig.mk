@@ -29,17 +29,6 @@ PRODUCT_UBOOT_CONFIG := tinker_board_3n
 PRODUCT_KERNEL_DTS := rk3568-tinker_board_3n
 PRODUCT_KERNEL_CONFIG ?= tinker_board_3n_defconfig
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
-
-HAS_RKAIQ := $(shell test -e external/camera_engine_rkaiq && echo yes)
-
-ifeq ($(HAS_RKAIQ),yes)
-    BOARD_CAMERA_SUPPORT_EXT := true
-else
-    BOARD_CAMERA_SUPPORT_EXT := false
-    BOARD_CAMERA_SUPPORT := false
-    BOARD_CAMERA_SUPPORT_VIR := false
-endif
-
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
 
