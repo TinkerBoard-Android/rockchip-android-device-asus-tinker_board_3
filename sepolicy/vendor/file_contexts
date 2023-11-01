@@ -10,3 +10,6 @@
 /sys/devices/platform/pwm-fan/hwmon/hwmon0/name u:object_r:sysfs_hwmon:s0
 /sys/devices/platform/pwm-fan/hwmon/hwmon0/pwm1 u:object_r:sysfs_hwmon:s0
 /sys/devices/platform/pwm-fan/hwmon/hwmon0/fan1_input u:object_r:sysfs_hwmon:s0
+
+# proc/driver/rtc
+/proc/driver/rtc    u:object_r:proc_driver_rtc:s0

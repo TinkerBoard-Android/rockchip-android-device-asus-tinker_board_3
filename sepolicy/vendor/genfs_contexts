@@ -1,0 +1,1 @@
+genfscon proc /driver/rtc u:object_r:proc_driver_rtc:s0
