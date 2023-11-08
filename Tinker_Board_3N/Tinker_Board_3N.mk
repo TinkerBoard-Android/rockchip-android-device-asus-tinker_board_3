@@ -20,6 +20,7 @@ PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
 PRODUCT_ASUS_NAME := Tinker_Board_3N
+BOARD_BOOT_HEADER_VERSION ?= 2
 
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/asus/tinker_board_3/Tinker_Board_3N/BoardConfig.mk

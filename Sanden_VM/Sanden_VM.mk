@@ -20,6 +20,7 @@ PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
 PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
 PRODUCT_ASUS_NAME := Sanden_VM
+BOARD_BOOT_HEADER_VERSION ?= 2
 
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/asus/tinker_board_3/Sanden_VM/BoardConfig.mk
