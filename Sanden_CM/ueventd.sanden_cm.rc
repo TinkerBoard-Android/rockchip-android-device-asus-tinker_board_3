@@ -63,7 +63,7 @@
 /dev/rtk_btusb            0660   bluetooth  net_bt
 
 #for hid audio
-/dev/hidraw0              0660   audio  audio
+/dev/hidraw0              0666   system     system
 
 # for radio
 /dev/ttyUSB*              	0666	   radio	radio
