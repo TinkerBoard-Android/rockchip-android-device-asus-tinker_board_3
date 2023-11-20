@@ -157,7 +157,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/cpu_gpu_utility.sh:$(TARGET_COPY_OUT_VENDOR)/bin/cpu_gpu_utility.sh
 
 BOARD_SEPOLICY_DIRS += \
-    device/asus/tinker_board_3/sepolicy/gps
+    device/asus/tinker_board_3/sepolicy/gps \
+    device/asus/tinker_board_3/sepolicy/bluetooth
 
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
