@@ -8,3 +8,4 @@
 #intf:spdif_8ch=on
 #intf:spi3=off
 #intf:i2s3_2ch=off
+conf:auto_ums=on
