@@ -38,6 +38,11 @@ on boot
     chmod 0666 /sys/class/devfreq/fde60000.gpu/min_freq
     chmod 0666 /sys/class/devfreq/fde60000.gpu/max_freq
 
+# For usb power manager
+    chmod 0666 /sys/kernel/debug/fd000000.dwc3/hub_vbus
+    chmod 0666 /sys/kernel/debug/fd000000.dwc3/connector_vbus
+    chmod 0666 /sys/kernel/debug/fd000000.dwc3/hub_reset
+
 on property:sys.boot_completed=1
     #HDMI CEC
     chown root system /dev/cec0
