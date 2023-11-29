@@ -58,3 +58,4 @@ PRODUCT_PACKAGES += \
     libmraajava
 endif
 
+TARGET_BOOTLOADER_BOARD_NAME := Tinker_Board_3N
