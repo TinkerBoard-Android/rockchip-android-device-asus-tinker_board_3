@@ -3,13 +3,16 @@ ifeq ($(PRODUCT_NAME), $(filter $(PRODUCT_NAME),Tinker_Board_3N Sanden_VM Sanden
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+LOCAL_CHECK_ELF_FILES := false
 LOCAL_MODULE := libmraa
 LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_TAGS := optional
 LOCAL_MULTILIB := 64
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_SHARED_LIBRARIES := libc libdl libm
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_SRC_FILES_64 := lib64/libmraa.so
+LOCAL_PREBUILT_JNI_LIBS := lib64/libc++_shared.so
 LOCAL_MODULE_TARGET_ARCH:= arm64
 include $(BUILD_PREBUILT)
 

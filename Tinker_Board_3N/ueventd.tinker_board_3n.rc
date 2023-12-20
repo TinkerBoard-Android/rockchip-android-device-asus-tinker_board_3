@@ -193,6 +193,7 @@
 /dev/dma_heap/system-dma32		0444   system     system
 /dev/dma_heap/system-uncached-dma32	0444   system     system
 
+/sys/class/pwm/pwmchip* export 0777 root root
 /sys/class/pwm/pwmchip* pwm0 0777 root root
 /sys/class/pwm/pwmchip* pwm0/capture 0666 root root
 /sys/class/pwm/pwmchip* pwm0/duty_cycle 0666 root root
