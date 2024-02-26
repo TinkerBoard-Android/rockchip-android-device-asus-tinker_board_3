@@ -26,6 +26,7 @@ on boot
     chmod 0666 /sys/kernel/debug/fd000000.dwc3/hub_vbus
     chmod 0666 /sys/kernel/debug/fd000000.dwc3/connector_vbus
     chmod 0666 /sys/kernel/debug/fd000000.dwc3/hub_reset
+    chmod 0666 /dev/i2c-3
 
 on property:sys.boot_completed=1
     #HDMI CEC
