@@ -1,4 +1,4 @@
-ifeq ($(PRODUCT_NAME), $(filter $(PRODUCT_NAME),Tinker_Board_3N Sanden_VM Sanden_CM))
+ifeq ($(PRODUCT_NAME), $(filter $(PRODUCT_NAME),Tinker_Board_3 Tinker_Board_3N Sanden_VM Sanden_CM))
 
 LOCAL_PATH := $(call my-dir)
 
