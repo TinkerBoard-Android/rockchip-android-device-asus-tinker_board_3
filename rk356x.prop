@@ -1,2 +1,3 @@
 ro.vendor.rk_sdk=1
 ro.sys.host_unhide_charge_notify=true
+ro.lockscreen.disable.default=true
