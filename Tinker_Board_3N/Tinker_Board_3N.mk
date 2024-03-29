@@ -50,3 +50,10 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3568
 TARGET_BOOTLOADER_BOARD_NAME := Tinker_Board_3N
+
+RTW88_FIRMWARES_DIR := vendor/rockchip/common/wifi/firmware/rtw88
+RTW88_FIRMWARES ?= $(filter-out .git/% %.mk,$(subst ./,,$(shell cd $(RTW88_FIRMWARES_DIR) && find . -type f)))
+
+PRODUCT_COPY_FILES += \
+    $(foreach f,$(RTW88_FIRMWARES),$(RTW88_FIRMWARES_DIR)/$(f):vendor/etc/firmware/rtw88/$(f))
+
