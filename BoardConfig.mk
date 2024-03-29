@@ -131,3 +131,12 @@ TARGET_SUPPORTS_OMX_SERVICE := false
 
 # Disable MULTIAUDIO for RK3568
 BOARD_SUPPORT_MULTIAUDIO := false
+
+# Allow overriding previous defines commands
+BUILD_BROKEN_DUP_RULES := true
+
+# Allow prebuilt modules copy to lib or bin path
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+# For cellular
+BOARD_SUPPORT_MODEM := true
