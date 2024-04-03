@@ -1,0 +1,3 @@
+allow shell sysfs_hwmon:file { open read write getattr };
+allow shell sysfs_hwmon:dir { open read search getattr };
+allow shell sysfs_hwmon:lnk_file read;

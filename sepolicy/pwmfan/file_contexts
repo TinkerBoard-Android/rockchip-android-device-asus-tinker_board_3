@@ -1,0 +1,3 @@
+/sys/devices/platform/pwm-fan    u:object_r:sysfs_hwmon:s0
+/sys/devices/platform/pwm-fan/hwmon    u:object_r:sysfs_hwmon:s0
+/sys/devices/platform/pwm-fan/hwmon(/.*)?    u:object_r:sysfs_hwmon:s0
