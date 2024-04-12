@@ -39,7 +39,7 @@ PRODUCT_DEVICE := Tinker_Board_3N
 PRODUCT_BRAND := asus
 PRODUCT_MODEL := Tinker Board 3N
 PRODUCT_MANUFACTURER := asus
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 #
 ## add Rockchip properties
 #
