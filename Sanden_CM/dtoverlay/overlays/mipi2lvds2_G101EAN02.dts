@@ -52,7 +52,7 @@
 				dsi,format = <0>;//MIPI_DSI_FMT_RGB888:
 				dsi,lanes = <4>;
 
-				t1=<50>;//VCC on to start lvds signal
+				t1=<40>;//VCC on to start lvds signal
 				t2=<200>;//t2-t6: LVDS signal(start) to turn Backlihgt on or Backlight sys Enable
 				t3=<100>;//Backlight sys Disable or Backlihgt(off) to stop lvds signal
 				t4=<0>;//LVDS signal to turn VCC off
