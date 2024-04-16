@@ -13,7 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-include device/rockchip/rk356x/BoardConfig.mk
+#include device/rockchip/rk356x/BoardConfig.mk
+include device/asus/tinker_board_3/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
 BOARD_BUILD_GKI := true
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
