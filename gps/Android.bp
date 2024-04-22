@@ -1,0 +1,20 @@
+cc_prebuilt_library_shared {
+    name: "product_quectel_gps",
+    vendor: true,
+    stem: "gps.default",
+    relative_install_path: "hw",
+    target: {
+        android_arm: {
+            srcs: ["armeabi-v7a/gps.default.so"],
+        },
+        android_arm64: {
+            srcs: ["arm64-v8a/gps.default.so"],
+        },
+    },
+    strip: {
+        none:true,
+    },
+    allow_undefined_symbols: true,
+    check_elf_files: false,
+    enabled: true,
+}
