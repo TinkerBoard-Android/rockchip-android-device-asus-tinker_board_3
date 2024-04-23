@@ -84,3 +84,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 ro.build.shutdown_timeout=6 \
                 persist.enable_task_snapshots=false \
                 ro.vendor.frameratelock=true
+
+ifeq ($(strip $(TARGET_PRODUCT)),Tinker_Board_3N)
+# system_post install modules
+PRODUCT_COPY_FILES += \
+    device/asus/tinker_board_3/rootdir/init.insmod_tinker3n.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod_post.cfg
+
+BOARD_VENDOR_KERNEL_MODULES += \
+    $(TOPDIR)$(PRODUCT_KERNEL_PATH)/drivers/net/can/rockchip/rockchip_canfd.ko
+
+# Add CAN-utils
+PRODUCT_PACKAGES += \
+    libcan \
+    candump \
+    cansend
+endif
