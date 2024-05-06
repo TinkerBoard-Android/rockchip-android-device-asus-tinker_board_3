@@ -16,13 +16,17 @@
 #include device/rockchip/rk356x/BoardConfig.mk
 include device/asus/tinker_board_3/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
-BOARD_BUILD_GKI := true
+BOARD_BUILD_GKI := false
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
 PRODUCT_UBOOT_CONFIG += tinker_board_3n.config
 PRODUCT_KERNEL_DTS := rk3568-tinker_board_3n
+ifeq ($(BOARD_BUILD_GKI),true)
+PRODUCT_KERNEL_CONFIG += tinker_board_3n_gki.config
+else
 PRODUCT_KERNEL_CONFIG += tinker_board_3n.config
+endif
 
 
 #64-bit onlye
