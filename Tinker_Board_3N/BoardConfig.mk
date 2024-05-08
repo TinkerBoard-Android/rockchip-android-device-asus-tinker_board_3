@@ -38,3 +38,6 @@ TARGET_2ND_CPU_ABI2 :=
 TARGET_2ND_CPU_VARIANT :=
 
 PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3N/fstab.in
+
+TARGET_ROCKCHIP_PCBATEST := false
+

@@ -88,6 +88,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 persist.enable_task_snapshots=false \
                 ro.vendor.frameratelock=true
 
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy/dtoverlay \
+    device/asus/tinker_board_3/sepolicy/AsusDebugger \
+    device/asus/tinker_board_3/sepolicy/vendor \
+    device/asus/tinker_board_3/sepolicy/media \
+    device/asus/tinker_board_3/sepolicy/system
+
+
 ifeq ($(strip $(TARGET_PRODUCT)),Tinker_Board_3N)
 # system_post install modules
 PRODUCT_COPY_FILES += \

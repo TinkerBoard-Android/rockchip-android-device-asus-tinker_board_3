@@ -42,6 +42,9 @@ else
 fstab_frp := none
 endif
 
+fstab_splash := "/dev/block/by-name/splash /splash emmc defaults defaults"
+fstab_dtoverlay := "/dev/block/by-name/dtoverlay /dtoverlay vfat defaults defaults"
+
 ifneq ($(strip $(BOARD_USES_AB_IMAGE)),true)
 fstab_uboot := "/dev/block/by-name/uboot /uboot emmc defaults defaults"
 fstab_recovery := "/dev/block/by-name/recovery /recovery emmc defaults defaults"
@@ -111,6 +114,8 @@ $(rebuild_fstab) : $(PRODUCT_FSTAB_TEMPLATE) $(ROCKCHIP_FSTAB_TOOLS)
 	-a $(fstab_init_boot) \
 	-a $(fstab_metadata) \
 	-a $(fstab_frp) \
+        -a $(fstab_splash) \
+        -a $(fstab_dtoverlay) \
 	-a $(fstab_uboot) \
 	-a $(fstab_recovery) \
 	-a $(fstab_vbmeta) \

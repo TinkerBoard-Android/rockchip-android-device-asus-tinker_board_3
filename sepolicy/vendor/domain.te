@@ -1,0 +1,1 @@
+allow domain proc_driver_rtc:file r_file_perms;

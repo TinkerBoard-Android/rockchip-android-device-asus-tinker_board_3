@@ -1,0 +1,1 @@
+/vendor/bin/install_magisk.sh                  u:object_r:magisk_sh_exec:s0

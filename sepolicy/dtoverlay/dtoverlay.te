@@ -1,0 +1,1 @@
+allow init vfat:dir mounton;
