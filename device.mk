@@ -119,3 +119,25 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += product_quectel_gps
 
+ifeq ($(strip $(PRODUCT_ASUS_NAME)), Sanden_VM)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Sanden_VM/init.sanden_vm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sanden_vm.rc \
+    $(LOCAL_PATH)/Sanden_VM/ueventd.sanden_vm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/Sanden_VM/init.connectivity.sanden_vm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+else ifeq ($(strip $(PRODUCT_ASUS_NAME)), Sanden_CM)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Sanden_CM/init.sanden_cm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sanden_cm.rc \
+    $(LOCAL_PATH)/Sanden_CM/ueventd.sanden_cm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/Sanden_CM/init.connectivity.sanden_cm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+else ifeq ($(strip $(PRODUCT_ASUS_NAME)), Tinker_Board_3N)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Tinker_Board_3N/init.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3n.rc \
+    $(LOCAL_PATH)/Tinker_Board_3N/ueventd.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/Tinker_Board_3N/init.connectivity.tinker_board_3n.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+else ifeq ($(strip $(PRODUCT_ASUS_NAME)), Tinker_Board_3)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/Tinker_Board_3/init.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3.rc \
+    $(LOCAL_PATH)/Tinker_Board_3/ueventd.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/Tinker_Board_3/init.connectivity.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+endif
+
