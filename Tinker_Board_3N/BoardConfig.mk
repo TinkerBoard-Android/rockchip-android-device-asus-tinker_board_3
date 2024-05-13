@@ -41,3 +41,4 @@ PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3N/fstab.in
 
 TARGET_ROCKCHIP_PCBATEST := false
 
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/bluetooth
