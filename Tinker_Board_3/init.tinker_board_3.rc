@@ -1,5 +1,14 @@
 # Tinker Board 3
 on early-init
 on init
+    # led
+    start vendor.led
 on late-init
 on boot
+on post-fs-data
+service vendor.led /vendor/bin/led.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot

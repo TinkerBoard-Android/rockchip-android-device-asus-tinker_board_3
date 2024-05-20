@@ -120,6 +120,13 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += product_quectel_gps
 
+# led
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/led/led.sh:$(TARGET_COPY_OUT_VENDOR)/bin/led.sh
+
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy/led
+
 ifeq ($(strip $(PRODUCT_ASUS_NAME)), Sanden_VM)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Sanden_VM/init.sanden_vm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sanden_vm.rc \
