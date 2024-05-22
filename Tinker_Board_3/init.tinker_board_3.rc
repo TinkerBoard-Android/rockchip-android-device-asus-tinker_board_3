@@ -18,6 +18,10 @@ on boot
     chmod 0666 /sys/devices/platform/gpio-fan/hwmon/hwmon2/fan_power
     chmod 0666 /sys/devices/platform/gpio-fan/hwmon/hwmon2/fan_speed
 
+    # For usb power manager
+    chmod 0666 /sys/kernel/debug/usb/fd000000.usb/hub_vbus
+    chmod 0666 /sys/kernel/debug/usb/fd800000.usb/hub_vbus
+    chmod 0666 /sys/kernel/debug/usb/fd800000.usb/hub_reset
 on post-fs-data
 service vendor.led /vendor/bin/led.sh
     class main
