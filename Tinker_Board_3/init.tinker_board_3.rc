@@ -5,6 +5,19 @@ on init
     start vendor.led
 on late-init
 on boot
+    # For GPIO FAN
+    chown system shell /sys/devices/platform/gpio-fan/hwmon
+    chown system shell /sys/devices/platform/gpio-fan/hwmon/hwmon2
+    chown system shell /sys/devices/platform/gpio-fan/hwmon/hwmon2/name
+    chown system shell /sys/devices/platform/gpio-fan/hwmon/hwmon2/fan_power
+    chown system shell /sys/devices/platform/gpio-fan/hwmon/hwmon2/fan_speed
+
+    chmod 0755 /sys/devices/platform/gpio-fan/hwmon
+    chmod 0755 /sys/devices/platform/gpio-fan/hwmon/hwmon2
+    chmod 0444 /sys/devices/platform/gpio-fan/hwmon/hwmon2/name
+    chmod 0666 /sys/devices/platform/gpio-fan/hwmon/hwmon2/fan_power
+    chmod 0666 /sys/devices/platform/gpio-fan/hwmon/hwmon2/fan_speed
+
 on post-fs-data
 service vendor.led /vendor/bin/led.sh
     class main
