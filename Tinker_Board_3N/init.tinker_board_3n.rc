@@ -25,8 +25,8 @@ on boot
 	setprop vendor.asus_debugger_running 0
 
     # for bmp splash
-    chmod 0666 /dev/block/mmcblk2p13
-    chmod 0666 /dev/block/mmcblk1p13
+    chmod 0666 /dev/block/mmcblk2p14
+    chmod 0666 /dev/block/mmcblk1p14
 
     chmod 0666 /sys/devices/platform/fe5b0000.i2c/i2c-2/2-006f/rtc/rtc0/wakealarm
 
