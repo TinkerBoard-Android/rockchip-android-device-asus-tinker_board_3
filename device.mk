@@ -96,12 +96,14 @@ BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/system
 
 ifeq ($(strip $(TARGET_PRODUCT)),Tinker_Board_3N)
+ifeq ($(BOARD_BUILD_GKI), true)
 # system_post install modules
 PRODUCT_COPY_FILES += \
     device/asus/tinker_board_3/rootdir/init.insmod_tinker3n.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod_post.cfg
 
 BOARD_VENDOR_KERNEL_MODULES += \
     $(TOPDIR)$(PRODUCT_KERNEL_PATH)/drivers/net/can/rockchip/rockchip_canfd.ko
+endif
 
 # Add CAN-utils
 PRODUCT_PACKAGES += \
