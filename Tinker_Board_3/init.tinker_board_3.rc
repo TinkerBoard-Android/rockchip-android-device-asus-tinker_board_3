@@ -23,6 +23,14 @@ on boot
     chmod 0666 /sys/kernel/debug/usb/fd800000.usb/hub_vbus
     chmod 0666 /sys/kernel/debug/usb/fd800000.usb/hub_reset
 
+    #for GPU
+    chown system system /sys/class/devfreq/fde60000.gpu/governor
+    chown system system /sys/class/devfreq/fde60000.gpu/min_freq
+    chown system system /sys/class/devfreq/fde60000.gpu/max_freq
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/governor
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/min_freq
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/max_freq
+
     # for bmp splash
     chmod 0666 /dev/block/mmcblk2p14
     chmod 0666 /dev/block/mmcblk1p14
