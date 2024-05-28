@@ -88,6 +88,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
                 persist.enable_task_snapshots=false \
                 ro.vendor.frameratelock=true
 
+ifeq ($(strip $(BOARD_AVB_ENABLE)), false)
+ifeq ($(strip $(BOARD_USES_AB_IMAGE)), false)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery.fstab.emmc:recovery/root/system/etc/recovery.fstab.emmc \
+    $(LOCAL_PATH)/fstab.rk30board.ramdisk:$(TARGET_COPY_OUT_RAMDISK)/fstab.rk30board \
+    $(LOCAL_PATH)/fstab.rk30board.emmc:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board.emmc \
+    $(LOCAL_PATH)/recovery.fstab.sd:recovery/root/system/etc/recovery.fstab.sd \
+    $(LOCAL_PATH)/fstab.rk30board.sd:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.rk30board.sd \
+    $(LOCAL_PATH)/init.mount_all_early.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.mount_all.rc
+endif
+endif
+
+
 BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/dtoverlay \
     device/asus/tinker_board_3/sepolicy/AsusDebugger \

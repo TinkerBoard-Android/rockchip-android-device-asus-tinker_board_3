@@ -30,7 +30,7 @@ ROCKCHIP_USB_OTG := true
 
 # BOARD_AVB_ENABLE := true
 # used for fstab_generator, sdmmc controller address
-PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe330000.nandc
+PRODUCT_BOOT_DEVICE := fe310000.sdhci,fe330000.nandc,fe2b0000.dwmmc
 
 SF_PRIMARY_DISPLAY_ORIENTATION := 0
 
