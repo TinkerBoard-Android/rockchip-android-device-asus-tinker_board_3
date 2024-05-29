@@ -108,6 +108,10 @@ BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/media \
     device/asus/tinker_board_3/sepolicy/system
 
+# Include thermal HAL module
+BOARD_ROCKCHIP_THERMAL := true
+$(call inherit-product, device/rockchip/common/modules/thermal.mk)
+
 ifeq ($(strip $(TARGET_PRODUCT)),Tinker_Board_3N)
 ifeq ($(BOARD_BUILD_GKI), true)
 # system_post install modules
