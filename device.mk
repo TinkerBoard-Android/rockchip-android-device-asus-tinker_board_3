@@ -166,3 +166,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Tinker_Board_3/init.connectivity.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
 endif
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/cpu_gpu_utility.sh:$(TARGET_COPY_OUT_VENDOR)/bin/cpu_gpu_utility.sh
+
