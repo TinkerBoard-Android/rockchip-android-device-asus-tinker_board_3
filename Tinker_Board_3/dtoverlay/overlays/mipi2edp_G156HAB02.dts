@@ -82,10 +82,24 @@
 			};
 		};
 	};
-	fragment@4 {
-                target = <&dsi0_in_vp1>;
-                __overlay__ {
-                        status = "okay";
-                };
+    fragment@4 {
+        target = <&dsi0_in_vp1>;
+        __overlay__ {
+            status = "okay";
+        };
+    };
+    fragment@5 {
+       target = <&vp0>;
+       __overlay__ {
+            rockchip,plane-mask = <42>; //AUX display layer, <(1 << ROCKCHIP_VOP2_CLUSTER1 | 1 << ROCKCHIP_VOP2_SMART1 | 1 << ROCKCHIP_VOP2_ESMART1)>
+            rockchip,primary-plane = <5>; //ROCKCHIP_VOP2_SMART1
+       };
+    };
+    fragment@6 {
+       target = <&vp1>;
+       __overlay__ {
+            rockchip,plane-mask = <21>; //MAIN display layer, <(1 << ROCKCHIP_VOP2_CLUSTER0 | 1 << ROCKCHIP_VOP2_SMART0 | 1 << ROCKCHIP_VOP2_ESMART0)>
+            rockchip,primary-plane = <4>; //ROCKCHIP_VOP2_SMART0
+       };
     };
 };
