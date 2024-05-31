@@ -1,0 +1,11 @@
+type tty_init_sh, domain;
+type tty_init_sh_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(tty_init_sh)
+
+allow tty_init_sh vendor_shell_exec:file rx_file_perms;
+allow tty_init_sh vendor_toolbox_exec:file rx_file_perms;
+allow tty_init_sh vendor_file:file execute_no_trans;
+allow tty_init_sh sysfs:file write;
+allow tty_init_sh sysfs:file open;
+allow tty_init_sh proc_cmdline:file { open read };

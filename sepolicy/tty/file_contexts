@@ -1,0 +1,1 @@
+/vendor/bin/tty_init.sh                  u:object_r:tty_init_sh_exec:s0

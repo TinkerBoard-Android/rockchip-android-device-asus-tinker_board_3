@@ -148,6 +148,13 @@ PRODUCT_COPY_FILES += \
 BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/led
 
+# tty
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/tty/tty_init.sh:$(TARGET_COPY_OUT_VENDOR)/bin/tty_init.sh
+
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy/tty
+
 ifeq ($(strip $(PRODUCT_ASUS_NAME)), Sanden_VM)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Sanden_VM/init.sanden_vm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.sanden_vm.rc \
