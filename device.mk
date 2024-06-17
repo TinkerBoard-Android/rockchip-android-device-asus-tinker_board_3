@@ -24,9 +24,6 @@ ifeq ($(HOST_OS),linux)
   TARGET_USERIMAGES_USE_F2FS := true
 endif
 
-BOARD_SEPOLICY_DIRS += \
-    device/asus/tinker_board_3/sepolicy_vendor/gps
-
 PRODUCT_COPY_FILES += \
     vendor/rockchip/common/bin/$(TARGET_ARCH)/busybox:recovery/root/sbin/busybox
 
@@ -137,14 +134,6 @@ endif
 PRODUCT_PACKAGES += \
     libmraa \
     libmraajava
-
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
-
-PRODUCT_PACKAGES += product_quectel_gps
 
 # led
 PRODUCT_COPY_FILES += \

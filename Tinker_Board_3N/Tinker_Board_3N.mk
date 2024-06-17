@@ -58,4 +58,16 @@ RTW88_FIRMWARES ?= $(filter-out .git/% %.mk,$(subst ./,,$(shell cd $(RTW88_FIRMW
 PRODUCT_COPY_FILES += \
     $(foreach f,$(RTW88_FIRMWARES),$(RTW88_FIRMWARES_DIR)/$(f):vendor/etc/firmware/rtw88/$(f))
 
-DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/manifest.xml
+DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/gps/gps_manifest.xml
+
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy_vendor/gps
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
+
+PRODUCT_COPY_FILES += \
+    device/asus/tinker_board_3/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
+
+PRODUCT_PACKAGES += product_quectel_gps
+

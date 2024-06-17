@@ -58,4 +58,3 @@ RTW88_FIRMWARES ?= $(filter-out .git/% %.mk,$(subst ./,,$(shell cd $(RTW88_FIRMW
 PRODUCT_COPY_FILES += \
     $(foreach f,$(RTW88_FIRMWARES),$(RTW88_FIRMWARES_DIR)/$(f):vendor/etc/firmware/rtw88/$(f))
 
-DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/manifest.xml

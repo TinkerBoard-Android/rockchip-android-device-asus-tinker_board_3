@@ -28,6 +28,7 @@ else
 PRODUCT_KERNEL_CONFIG += tinker_board_3n.config
 endif
 
+BOARD_HAS_GPS := true
 
 #64-bit onlye
 DEVICE_IS_64BIT_ONLY := true
