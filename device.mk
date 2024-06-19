@@ -130,11 +130,6 @@ BOARD_SEPOLICY_DIRS += \
 
 endif
 
-# Add libmraa
-PRODUCT_PACKAGES += \
-    libmraa \
-    libmraajava
-
 # led
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/led/led.sh:$(TARGET_COPY_OUT_VENDOR)/bin/led.sh

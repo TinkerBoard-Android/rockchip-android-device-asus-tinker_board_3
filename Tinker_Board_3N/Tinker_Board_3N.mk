@@ -58,6 +58,7 @@ RTW88_FIRMWARES ?= $(filter-out .git/% %.mk,$(subst ./,,$(shell cd $(RTW88_FIRMW
 PRODUCT_COPY_FILES += \
     $(foreach f,$(RTW88_FIRMWARES),$(RTW88_FIRMWARES_DIR)/$(f):vendor/etc/firmware/rtw88/$(f))
 
+<<<<<<< HEAD
 DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/gps/gps_manifest.xml
 
 BOARD_SEPOLICY_DIRS += \
@@ -71,3 +72,9 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += product_quectel_gps
 
+
+ifeq ($(strip $(PRODUCT_NAME)), Tinker_Board_3N)
+PRODUCT_PACKAGES += \
+    libmraa \
+    libmraajava
+endif

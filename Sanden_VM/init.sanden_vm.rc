@@ -1,0 +1,130 @@
+# Sanden_VM
+on early-init
+
+on init
+    # led
+    start vendor.led
+
+on late-init
+
+on boot
+    # For PWM fan
+    chown system shell /sys/devices/platform/pwm-fan/hwmon
+    chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon2
+    chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon2/name
+    chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon2/pwm1
+    chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon2/fan1_input
+    chown system shell /sys/devices/platform/pwm-fan/hwmon/hwmon2/pwm1_enable
+
+    chmod 0776 /sys/devices/platform/pwm-fan/hwmon/hwmon2
+    chmod 0444 /sys/devices/platform/pwm-fan/hwmon/hwmon2/name
+    chmod 0666 /sys/devices/platform/pwm-fan/hwmon/hwmon2/pwm1
+    chmod 0666 /sys/devices/platform/pwm-fan/hwmon/hwmon2/pwm1_enable
+    chmod 0444 /sys/devices/platform/pwm-fan/hwmon/hwmon2/fan1_input
+
+	setprop vendor.asus_debugger_running 0
+
+    # for bmp splash
+    chmod 0666 /dev/block/mmcblk2p14
+    chmod 0666 /dev/block/mmcblk1p14
+
+    chmod 0666 /sys/devices/platform/fe5b0000.i2c/i2c-2/2-006f/rtc/rtc0/wakealarm
+
+# For power manager
+    chmod 0444 /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+    chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+    chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+    chmod 0666 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+
+    chown system system /sys/class/devfreq/fde60000.gpu/governor
+    chown system system /sys/class/devfreq/fde60000.gpu/min_freq
+    chown system system /sys/class/devfreq/fde60000.gpu/max_freq
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/governor
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/min_freq
+    chmod 0666 /sys/class/devfreq/fde60000.gpu/max_freq
+
+# For usb power manager
+    chmod 0666 /sys/kernel/debug/usb/fd000000.usb/hub_vbus
+    chmod 0666 /sys/kernel/debug/usb/fd000000.usb/connector_vbus
+    chmod 0666 /sys/kernel/debug/usb/fd000000.usb/hub_reset
+    chmod 0666 /dev/i2c-3
+
+on property:sys.boot_completed=1
+    #HDMI CEC
+    chown root system /dev/cec0
+    chmod 0664 /dev/cec0
+
+service vendor.led /vendor/bin/led.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+# asus-debugger-d
+service asus-dbug-d /vendor/bin/asus-debugger-d
+    user root
+    group root log
+    group root system
+    disabled
+
+service cpu_gpu_utility /vendor/bin/cpu_gpu_utility.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+# Magisk app
+service install-magisk /vendor/bin/install_magisk.sh
+    class late_start
+    user root
+    group root
+    disabled
+    oneshot
+
+# For tty
+service tty_init /vendor/bin/tty_init.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:sys.asus_debugger_running=1
+    start asus-dbug-d
+
+on property:persist.sys.run_debugger=1
+    start asus-dbug-d
+    setprop vendor.run_debugger 1
+
+on property:persist.sys.run_debugger=0
+    setprop vendor.run_debugger 0
+
+on property:sys.asus_debugger_running=3
+    stop asus-dbug-d
+    setprop vendor.asus_debugger_running 3
+
+on property:sys.asus_debugger_running=1
+    restorecon /dev/socket/asus-debugger
+
+on property:sys.asus_debugger_running=2
+    restorecon /dev/socket/asus-debugger
+
+on property:vendor.asus_debugger_running=2
+    setprop sys.asus_debugger_running 2
+
+on property:vendor.boot_completed=1
+    start cpu_gpu_utility
+    # uart
+    start tty_init
+    start install-magisk
+
+# For 12 Pin
+    chmod 0666 /dev/gpiochip3
+    chmod 0666 /dev/gpiochip4
+    chmod 0666 /dev/i2c-5
+    chmod 0666 /dev/spidev3.0
+    chmod 0666 /dev/spidev3.1
+    chmod 0666 /dev/ttyS4
+    chmod 0666 /dev/ttyS9
