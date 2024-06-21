@@ -42,7 +42,7 @@ on boot
     chmod 0666 /dev/block/mmcblk1p14
 
     # for RTC Tinker config app
-    chmod 0666 /sys/devices/platform/fe5b0000.i2c/i2c-2/2-006f/rtc/rtc0 
+    chmod 0666 /sys/devices/platform/fe5b0000.i2c/i2c-2/2-006f/rtc/rtc0/wakealarm
 
 on post-fs-data
 service vendor.led /vendor/bin/led.sh
