@@ -44,6 +44,26 @@ on boot
     # for RTC Tinker config app
     chmod 0666 /sys/devices/platform/fe5b0000.i2c/i2c-2/2-006f/rtc/rtc0/wakealarm
 
+    # for 40 Pins
+    chmod 0666 /sys/class/gpio/export
+    chmod 0666 /dev/gpiochip0
+    chmod 0666 /dev/gpiochip1
+    chmod 0666 /dev/gpiochip2
+    chmod 0666 /dev/gpiochip3
+    chmod 0666 /dev/gpiochip4
+    chmod 0666 /dev/gpiochip5
+    chmod 0666 /dev/i2c-1
+    chmod 0666 /dev/i2c-5
+    chmod 0666 /dev/spidev2.0
+    chmod 0666 /dev/spidev2.1
+    chmod 0666 /dev/spidev3.0
+    chmod 0666 /dev/spidev3.1
+    chmod 0666 /dev/ttyS0
+    chmod 0666 /dev/ttyS1
+    chmod 0666 /dev/ttyS4
+    chmod 0666 /dev/ttyS9
+
+
 on post-fs-data
 service vendor.led /vendor/bin/led.sh
     class main
