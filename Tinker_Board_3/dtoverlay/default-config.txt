@@ -1,6 +1,7 @@
 #intf:uart0=off
 #intf:uart1=off
 #intf:uart4=off
+#intf:uart9=off
 #intf:i2c1=off
 #intf:i2c5=off
 #intf:i2s3_2ch=off
