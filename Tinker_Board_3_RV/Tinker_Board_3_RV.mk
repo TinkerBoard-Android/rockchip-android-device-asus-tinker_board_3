@@ -1,0 +1,63 @@
+#
+# Copyright 2014 The Android Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
+# First lunching is U, api_level is 34
+PRODUCT_SHIPPING_API_LEVEL := 34
+PRODUCT_DTBO_TEMPLATE := $(LOCAL_PATH)/dt-overlay.in
+PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
+
+PRODUCT_ASUS_NAME := Tinker_Board_3_RV
+BOARD_BOOT_HEADER_VERSION ?= 2
+
+include device/rockchip/common/build/rockchip/DynamicPartitions.mk
+include device/asus/tinker_board_3/Tinker_Board_3_RV/BoardConfig.mk
+include device/rockchip/common/BoardConfig.mk
+$(call inherit-product, device/asus/tinker_board_3/device.mk)
+$(call inherit-product, device/rockchip/common/device.mk)
+$(call inherit-product, device/asus/common/device.mk)
+$(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/../overlay
+
+PRODUCT_CHARACTERISTICS := tablet
+
+PRODUCT_NAME := Tinker_Board_3_RV
+PRODUCT_DEVICE := Tinker_Board_3_RV
+PRODUCT_BRAND := asus
+PRODUCT_MODEL := Tinker Board 3 RV
+PRODUCT_MANUFACTURER := asus
+PRODUCT_AAPT_PREF_CONFIG := hdpi
+#
+## add Rockchip properties
+#
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
+PRODUCT_PROPERTY_OVERRIDES += ro.wifi.sleep.power.down=true
+PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
+PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.rotation.efull-1=true
+
+PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3566
+TARGET_BOOTLOADER_BOARD_NAME := Tinker_Board_3_RV
+
+RTW88_FIRMWARES_DIR := vendor/rockchip/common/wifi/firmware/rtw88
+RTW88_FIRMWARES ?= $(filter-out .git/% %.mk,$(subst ./,,$(shell cd $(RTW88_FIRMWARES_DIR) && find . -type f)))
+
+PRODUCT_COPY_FILES += \
+    $(foreach f,$(RTW88_FIRMWARES),$(RTW88_FIRMWARES_DIR)/$(f):vendor/etc/firmware/rtw88/$(f))
+
+PRODUCT_PACKAGES += \
+    libmraa \
+    libmraajava \
