@@ -33,6 +33,8 @@
 				de-mode;
 				Tinker3;
 				enable-overlay;
+				reg33 = /bits/ 8 <0x02>;
+				reg35 = /bits/ 8 <0x04>;
 				//test-pattern;
 			};
 		};
