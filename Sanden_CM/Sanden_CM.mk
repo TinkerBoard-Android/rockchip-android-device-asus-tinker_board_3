@@ -59,6 +59,8 @@ PRODUCT_PACKAGES += \
     libmraajava
 
 PRODUCT_PACKAGES += \
+    termux-app_release_universal \
+    termux-boot_release_universal \
     Gboard \
     Magisk.apk
 endif
