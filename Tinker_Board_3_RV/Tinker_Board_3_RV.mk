@@ -61,3 +61,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libmraa \
     libmraajava \
+
+# Add CAN-utils
+PRODUCT_PACKAGES += \
+    libcan \
+    candump \
+    cansend
