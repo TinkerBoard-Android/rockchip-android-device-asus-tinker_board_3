@@ -160,13 +160,6 @@ BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/gps \
     device/asus/tinker_board_3/sepolicy/bluetooth
 
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/arm64-v8a/gps.default.so:vendor/lib64/hw/gps.default.so \
-    $(LOCAL_PATH)/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
-
 # Add CAN-utils
 PRODUCT_PACKAGES += \
     libcan \

@@ -50,7 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 
 # Append the manifest files for Tinker Board 2 here since this will be defined
 # in device/rockchip/common/BoardConfig.mk to use the default one.
-DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/manifest.xml
+DEVICE_MANIFEST_FILE += device/asus/tinker_board_3/manifest.xml device/asus/tinker_board_3/gps/gps_manifest.xml
 
 ifeq ($(strip $(PRODUCT_NAME)), Tinker_Board_3N)
 PRODUCT_PACKAGES += \
@@ -59,3 +59,12 @@ PRODUCT_PACKAGES += \
 endif
 
 TARGET_BOOTLOADER_BOARD_NAME := Tinker_Board_3N
+
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
+
+PRODUCT_COPY_FILES += \
+    device/asus/tinker_board_3/gps/arm64-v8a/gps.default.so:vendor/lib64/hw/gps.default.so \
+    device/asus/tinker_board_3/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
+
+

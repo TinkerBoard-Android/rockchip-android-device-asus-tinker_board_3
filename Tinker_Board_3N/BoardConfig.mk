@@ -39,3 +39,4 @@ endif
 
 PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3N/fstab.in
 
+BOARD_HAS_GPS := true

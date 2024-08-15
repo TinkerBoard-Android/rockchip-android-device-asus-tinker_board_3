@@ -36,3 +36,5 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Tinker
 TARGET_ROCKCHIP_PCBATEST := false
 
 PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3/fstab.in
+
+BOARD_HAS_GPS := true
