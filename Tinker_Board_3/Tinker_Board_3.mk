@@ -26,7 +26,7 @@ include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/asus/tinker_board_3/Tinker_Board_3/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
 $(call inherit-product, device/asus/tinker_board_3/device.mk)
-$(call inherit-product, device/rockchip/common/device.mk)
+$(call inherit-product, device/rockchip/common/device_asus.mk)
 $(call inherit-product, device/asus/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
