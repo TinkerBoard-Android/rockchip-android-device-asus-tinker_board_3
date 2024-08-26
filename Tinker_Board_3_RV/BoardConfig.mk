@@ -18,6 +18,11 @@ include device/asus/tinker_board_3/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
 
 BOARD_BUILD_GKI := false
+
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+BOARD_SELINUX_ENFORCING := false
+endif
+
 PRODUCT_UBOOT_CONFIG += tinker_board_3_rv.config
 PRODUCT_KERNEL_DTS := rk3566-tinker_board_3_rv
 PRODUCT_KERNEL_CONFIG += tinker_board_3_rv.config
