@@ -17,6 +17,11 @@
 include device/asus/tinker_board_3/BoardConfig.mk
 BUILD_WITH_GO_OPT := false
 BOARD_BUILD_GKI := false
+
+ifeq ($(TARGET_BUILD_VARIANT),userdebug)
+BOARD_SELINUX_ENFORCING := false
+endif
+
 BOARD_GSENSOR_MXC6655XA_SUPPORT := true
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := true
