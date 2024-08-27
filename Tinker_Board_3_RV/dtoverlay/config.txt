@@ -23,4 +23,4 @@ g52_maxfreq=800000000
 
 ## Note: Put dtbo files under the overlays folder. ##
 
-overlay=
+overlay=dsi_jd9165ba
