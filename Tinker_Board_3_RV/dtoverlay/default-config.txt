@@ -1,0 +1,3 @@
+#intf:pwm1=off
+#intf:pwm5=off
+conf:auto_ums=on
