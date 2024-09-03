@@ -46,6 +46,9 @@ on boot
 # For usb power manager
     chmod 0666 /sys/kernel/debug/fd000000.dwc3/hub_vbus
 
+# watchdog
+    start watchdogd
+
 on property:sys.boot_completed=1
     #HDMI CEC
     chown root system /dev/cec0
