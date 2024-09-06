@@ -186,9 +186,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/Tinker_Board_3/init.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3.rc \
     $(LOCAL_PATH)/Tinker_Board_3/ueventd.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
     $(LOCAL_PATH)/Tinker_Board_3/init.connectivity.tinker_board_3.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
-else ifeq ($(strip $(PRODUCT_ASUS_NAME)), Tinker_Board_3_RV)
+else ifeq ($(strip $(PRODUCT_ASUS_NAME)), RVMON7_CTRL_PCB)
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/Tinker_Board_3_RV/init.tinker_board_3_rv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.tinker_board_3_rv.rc \
-    $(LOCAL_PATH)/Tinker_Board_3_RV/ueventd.tinker_board_3_rv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(LOCAL_PATH)/Tinker_Board_3_RV/init.connectivity.tinker_board_3_rv.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+    $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.rvmon7_ctrl_pcb.rc \
+    $(LOCAL_PATH)/RVMON7_CTRL_PCB/ueventd.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
+    $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.connectivity.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
 endif

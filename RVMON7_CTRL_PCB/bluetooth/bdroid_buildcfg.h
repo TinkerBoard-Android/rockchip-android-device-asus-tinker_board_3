@@ -17,7 +17,7 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME   "Tinker Board 3 RV"
+#define BTM_DEF_LOCAL_NAME   "RVMON7 CTRL PCB"
 
 // SERVICE_CLASS:0x1A (Bit17 -Networking,Bit19 - Capturing,Bit20 -Object Transfer)
 // MAJOR CLASS: COMPUTER

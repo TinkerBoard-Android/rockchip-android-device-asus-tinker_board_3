@@ -1,5 +1,5 @@
 # zygote need to be started after otapreopt which will be done on post-fs-data
-# Tinker Board 3 RV
+# RVMON7 CTRL PCB
 on zygote-start
 
 # for bluetooth

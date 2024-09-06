@@ -22,17 +22,17 @@ BOARD_ROCKCHIP_VIRTUAL_AB_ENABLE := false
 
 ifeq ($(strip $(BOARD_USES_AB_IMAGE)), true)
     include device/rockchip/common/BoardConfig_AB.mk
-    TARGET_RECOVERY_FSTAB := device/asus/tinker_board_3/Tinker_Board_3/recovery.fstab_AB
+    TARGET_RECOVERY_FSTAB := device/asus/tinker_board_3/RVMON7_CTRL_PCB/recovery.fstab_AB
 endif
 
-PRODUCT_UBOOT_CONFIG := tinker_board_3_rv
-PRODUCT_KERNEL_DTS := rk3566-tinker_board_3_rv
-PRODUCT_KERNEL_CONFIG ?= tinker_board_3_rv_defconfig
+PRODUCT_UBOOT_CONFIG := rvmon7_ctrl_pcb
+PRODUCT_KERNEL_DTS := rk3566-rvmon7_ctrl_pcb
+PRODUCT_KERNEL_CONFIG ?= rvmon7_ctrl_pcb_defconfig
 BOARD_GSENSOR_MXC6655XA_SUPPORT := false
 BOARD_CAMERA_SUPPORT_EXT := true
 BOARD_HS_ETHERNET := false
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/Tinker_Board_3/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/asus/tinker_board_3/RVMON7_CTRL_PCB/bluetooth
 TARGET_ROCKCHIP_PCBATEST := false
 
-PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3_RV/fstab.in
+PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/RVMON7_CTRL_PCB/fstab.in
