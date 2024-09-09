@@ -190,5 +190,6 @@ else ifeq ($(strip $(PRODUCT_ASUS_NAME)), RVMON7_CTRL_PCB)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.rvmon7_ctrl_pcb.rc \
     $(LOCAL_PATH)/RVMON7_CTRL_PCB/ueventd.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc \
-    $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.connectivity.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc
+    $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.connectivity.rvmon7_ctrl_pcb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.connectivity.rc \
+    $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.rvmon.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(TARGET_BOARD_HARDWARE).usb.rc
 endif
