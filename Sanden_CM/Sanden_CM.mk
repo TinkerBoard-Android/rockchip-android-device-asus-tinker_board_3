@@ -49,6 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
 PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.rotation.efull-1=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
+PRODUCT_PROPERTY_OVERRIDES += debug.sf.nobootanimation=1
 
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3568
 TARGET_BOOTLOADER_BOARD_NAME := Sanden_CM 
