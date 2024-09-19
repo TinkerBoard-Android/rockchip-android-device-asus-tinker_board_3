@@ -50,6 +50,7 @@ PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.rotation.efull-1=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 PRODUCT_PROPERTY_OVERRIDES += debug.sf.nobootanimation=1
+PRODUCT_PROPERTY_OVERRIDES += persist.root_enable.mode=true
 
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3568
 TARGET_BOOTLOADER_BOARD_NAME := Sanden_CM 
@@ -82,8 +83,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     termux-app_release_universal \
     termux-boot_release_universal \
-    Gboard \
-    Magisk.apk
+    Gboard
 endif
 
 PRODUCT_COPY_FILES += \
