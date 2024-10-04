@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VoltageDetectService</string>
+    <string name="hide">GOT IT</string>
+    <string name="warningtitle">Low Voltage</string>
+    <string name="warningtext">"The system may turn off due to low power input (input voltage below 4.65V), when this happens, please disconnect high power consuming peripherals or change to a qualified power supply."</string>
+</resources>

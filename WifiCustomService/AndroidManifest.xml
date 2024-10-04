@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.asus.wificustomservice"
+        android:sharedUserId="android.uid.system">
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
+    <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="29" />
+
+    <application>
+
+        <receiver android:name=".BootUpReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".StaticIPReceiver"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="com.asus.wificustomservice.ACTION_SET_STATIC_IP"/>
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
