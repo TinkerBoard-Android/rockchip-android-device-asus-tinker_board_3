@@ -21,6 +21,7 @@ PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
 PRODUCT_ASUS_NAME := Sanden_CM 
 BOARD_BOOT_HEADER_VERSION ?= 2
+PRODUCT_LOCALES := ja_JP
 
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/asus/tinker_board_3/Sanden_CM/BoardConfig.mk
@@ -51,6 +52,9 @@ PRODUCT_PROPERTY_OVERRIDES += persist.sys.rotation.efull-1=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
 PRODUCT_PROPERTY_OVERRIDES += debug.sf.nobootanimation=1
 PRODUCT_PROPERTY_OVERRIDES += persist.root_enable.mode=true
+PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.language=ja
+PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.region=JP
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone=Asia/Tokyo
 
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3568
 TARGET_BOOTLOADER_BOARD_NAME := Sanden_CM 
