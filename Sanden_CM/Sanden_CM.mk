@@ -50,7 +50,6 @@ PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
 PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.rotation.efull-1=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
-PRODUCT_PROPERTY_OVERRIDES += debug.sf.nobootanimation=1
 PRODUCT_PROPERTY_OVERRIDES += persist.root_enable.mode=true
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.language=ja
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.region=JP
@@ -61,6 +60,10 @@ TARGET_BOOTLOADER_BOARD_NAME := Sanden_CM
 
 RTW88_FIRMWARES_DIR := vendor/rockchip/common/wifi/firmware/rtw88
 RTW88_FIRMWARES ?= $(filter-out .git/% %.mk,$(subst ./,,$(shell cd $(RTW88_FIRMWARES_DIR) && find . -type f)))
+
+#boot animation
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/bootanimation.zip:product/media/bootanimation.zip \
 
 PRODUCT_COPY_FILES += \
     $(foreach f,$(RTW88_FIRMWARES),$(RTW88_FIRMWARES_DIR)/$(f):vendor/etc/firmware/rtw88/$(f))
