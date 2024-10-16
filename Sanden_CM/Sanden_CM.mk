@@ -54,7 +54,7 @@ PRODUCT_PROPERTY_OVERRIDES += debug.sf.nobootanimation=1
 PRODUCT_PROPERTY_OVERRIDES += persist.root_enable.mode=true
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.language=ja
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.region=JP
-PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone=Asia/Tokyo
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone="Asia/Tokyo"
 
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3568
 TARGET_BOOTLOADER_BOARD_NAME := Sanden_CM 
@@ -89,8 +89,6 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_PACKAGES += \
-    termux-app_release_universal \
-    termux-boot_release_universal \
     Gboard
 endif
 
