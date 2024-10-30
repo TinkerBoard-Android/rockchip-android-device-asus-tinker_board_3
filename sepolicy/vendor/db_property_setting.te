@@ -1,0 +1,13 @@
+type db_property_setting, domain;
+type db_property_setting_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(db_property_setting)
+
+dontaudit db_property_setting sysfs:file rw_file_perms;
+allow db_property_setting vendor_file:file execute_no_trans;
+allow db_property_setting vendor_toolbox_exec:file execute_no_trans;
+allow db_property_setting sysfs_devices_system_cpu:file write;
+allow db_property_setting vfat:dir search;
+allow db_property_setting vfat:file read;
+allow db_property_setting vfat:file open;
+

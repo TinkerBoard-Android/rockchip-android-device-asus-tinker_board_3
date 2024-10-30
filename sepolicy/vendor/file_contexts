@@ -6,3 +6,5 @@
 
 # proc/driver/rtc
 /proc/driver/rtc    u:object_r:proc_driver_rtc:s0
+
+/vendor/bin/db_property_setting.sh		u:object_r:db_property_setting_exec:s0

@@ -75,6 +75,13 @@ service cpu_gpu_utility /vendor/bin/cpu_gpu_utility.sh
     disabled
     oneshot
 
+service db_property_setting /vendor/bin/db_property_setting.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
 # For tty
 service tty_init /vendor/bin/tty_init.sh
     class main
@@ -110,6 +117,7 @@ on property:vendor.boot_completed=1
     start cpu_gpu_utility
     # uart
     start tty_init
+    start db_property_setting 
 
 # For 12 Pin
     chmod 0666 /dev/gpiochip3
