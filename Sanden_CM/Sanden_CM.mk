@@ -54,6 +54,10 @@ PRODUCT_PROPERTY_OVERRIDES += persist.root_enable.mode=true
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.language=ja
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.region=JP
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone="Asia/Tokyo"
+PRODUCT_PROPERTY_OVERRIDES += ro.config.media_vol_default=15
+PRODUCT_PROPERTY_OVERRIDES += ro.config.vc_call_vol_default=0
+PRODUCT_PROPERTY_OVERRIDES += ro.config.alarm_vol_default=0
+PRODUCT_PROPERTY_OVERRIDES += ro.config.system_vol_default=0
 
 PRODUCT_VENDOR_PROPERTIES += ro.soc.model=RK3568
 TARGET_BOOTLOADER_BOARD_NAME := Sanden_CM 
