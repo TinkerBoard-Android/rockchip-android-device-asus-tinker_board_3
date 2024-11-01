@@ -16,6 +16,13 @@ if [ "$FIRST_BOOT_CHECK" == "1" ]; then
 else
     logi "This is the first boot"
 
+    # notification bubbles
+    settings put secure notification_bubbles 0
+
+    # notification dot icon
+    settings put secure  notification_badging 0
+
+
     settings put global first_boot_done 1
     echo "This is the first boot"
 fi
