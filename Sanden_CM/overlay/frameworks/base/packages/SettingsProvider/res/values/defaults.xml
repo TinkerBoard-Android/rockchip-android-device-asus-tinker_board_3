@@ -45,4 +45,8 @@
     <bool name="def_charging_vibration_enabled">false</bool>
     <!-- Default for Settings.Secure.CHARGING_SOUNDS_ENABLED -->
     <bool name="def_charging_sounds_enabled">false</bool>
+    <!-- Default for DTMF tones enabled -->
+    <bool name="def_dtmf_tones_enabled">false</bool>
+    <!-- Default for UI touch sounds enabled -->
+    <bool name="def_sound_effects_enabled">false</bool>
 </resources>
