@@ -22,6 +22,12 @@ else
     # notification dot icon
     settings put secure  notification_badging 0
 
+    # disable "Show media recommendations"
+    settings put secure qs_media_recommend 0
+    # disable "Show media on lock screen"
+    settings put secure media_controls_lock_screen 0
+    # disable "Pin media player"
+    settings put secure qs_media_resumption 0
 
     settings put global first_boot_done 1
     echo "This is the first boot"
