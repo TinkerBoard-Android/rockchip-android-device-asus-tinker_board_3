@@ -41,4 +41,8 @@
 
     <!-- Default lockscreen sound is disabled -->
     <integer name="def_lockscreen_sounds_enabled">0</integer>
+    <!-- Default for Settings.Secure.CHARGING_VIBRATION_ENABLED -->
+    <bool name="def_charging_vibration_enabled">false</bool>
+    <!-- Default for Settings.Secure.CHARGING_SOUNDS_ENABLED -->
+    <bool name="def_charging_sounds_enabled">false</bool>
 </resources>
