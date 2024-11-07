@@ -4,7 +4,7 @@
 		compatible = "rockchip,rk3566";
 
 		fragment@0 {
-			target = <&pwm2>;
+			target = <&pwm5>;
 			__overlay__ {
 				status = "okay";
 			};
@@ -15,7 +15,7 @@
 					status = "okay";
 					soc_enablekl-gpios = <&gpio2 19 0>;
 					minimal-brightness-level = <30>;
-					pwms = <&pwm2 0 1000000 0>;
+					pwms = <&pwm5 0 1000000 0>;
 					brightness-levels = <
 						255 254 253 252 251 250 249 248
 						247 246 245 244 243 242 241 240
