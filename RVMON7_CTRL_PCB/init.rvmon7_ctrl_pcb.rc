@@ -20,8 +20,6 @@ on boot
     chmod 0666 /sys/devices/platform/gpio-fan/hwmon/hwmon0/fan_power
     chmod 0666 /sys/devices/platform/gpio-fan/hwmon/hwmon0/fan_speed
 
-    setprop vendor.asus_debugger_running 0
-
     # for bmp splash
     # emmc
     chmod 0666 /dev/block/mmcblk2p13
@@ -61,13 +59,6 @@ service vendor.led /vendor/bin/led.sh
     disabled
     oneshot
 
-# asus-debugger-d
-service asus-dbug-d /vendor/bin/asus-debugger-d
-    user root
-    group root log
-    group root system
-    disabled
-
 service cpu_gpu_utility /vendor/bin/cpu_gpu_utility.sh
     class main
     user root
@@ -75,28 +66,8 @@ service cpu_gpu_utility /vendor/bin/cpu_gpu_utility.sh
     disabled
     oneshot
 
-on property:sys.asus_debugger_running=1
-    start asus-dbug-d
-
-on property:persist.sys.run_debugger=1
-    start asus-dbug-d
-    setprop vendor.run_debugger 1
-
 on property:persist.sys.run_debugger=0
     setprop vendor.run_debugger 0
-
-on property:sys.asus_debugger_running=3
-    stop asus-dbug-d
-    setprop vendor.asus_debugger_running 3
-
-on property:sys.asus_debugger_running=1
-    restorecon /dev/socket/asus-debugger
-
-on property:sys.asus_debugger_running=2
-    restorecon /dev/socket/asus-debugger
-
-on property:vendor.asus_debugger_running=2
-    setprop sys.asus_debugger_running 2
 
 on property:vendor.boot_completed=1
     start cpu_gpu_utility
