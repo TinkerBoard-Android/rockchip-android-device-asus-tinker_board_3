@@ -1,0 +1,2 @@
+get_prop(system_app, vendor_fullscreen_prop)
+set_prop(system_app, vendor_fullscreen_prop)

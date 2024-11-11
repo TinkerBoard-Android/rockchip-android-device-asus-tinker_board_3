@@ -147,7 +147,8 @@ BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/AsusDebugger \
     device/asus/tinker_board_3/sepolicy/vendor \
     device/asus/tinker_board_3/sepolicy/media \
-    device/asus/tinker_board_3/sepolicy/system
+    device/asus/tinker_board_3/sepolicy/system \
+    device/asus/tinker_board_3/sepolicy/fullscreen
 
 # Include thermal HAL module
 BOARD_ROCKCHIP_THERMAL := true
