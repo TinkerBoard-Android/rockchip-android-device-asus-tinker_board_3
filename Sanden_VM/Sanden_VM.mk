@@ -44,14 +44,14 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 #
 ## add Rockchip properties
 #
-PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=240
+PRODUCT_PROPERTY_OVERRIDES += ro.sf.lcd_density=160
 PRODUCT_PROPERTY_OVERRIDES += ro.wifi.sleep.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
 PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.rotation.efull-1=true
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.fflag.override.settings_enable_monitor_phantom_procs=false
-PRODUCT_PROPERTY_OVERRIDES += debug.sf.nobootanimation=1
 PRODUCT_PROPERTY_OVERRIDES += persist.root_enable.mode=true
+PRODUCT_PROPERTY_OVERRIDES += persist.sys.panel.flip=270
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.language=ja
 PRODUCT_PROPERTY_OVERRIDES += ro.product.locale.region=JP
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.timezone=Asia/Tokyo
