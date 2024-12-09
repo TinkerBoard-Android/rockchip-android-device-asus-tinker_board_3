@@ -21,6 +21,8 @@ PRODUCT_SDMMC_DEVICE := fe2b0000.dwmmc
 
 PRODUCT_ASUS_NAME := RVMON7_CTRL_PCB
 
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+
 include device/rockchip/common/build/rockchip/DynamicPartitions.mk
 include device/asus/tinker_board_3/RVMON7_CTRL_PCB/BoardConfig.mk
 include device/rockchip/common/BoardConfig.mk
@@ -28,8 +30,6 @@ $(call inherit-product, device/asus/tinker_board_3/device.mk)
 $(call inherit-product, device/rockchip/common/device.mk)
 $(call inherit-product, device/asus/common/device.mk)
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
-
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 PRODUCT_CHARACTERISTICS := tablet
 
