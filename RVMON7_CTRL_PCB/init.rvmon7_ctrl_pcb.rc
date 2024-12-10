@@ -72,3 +72,12 @@ on property:persist.sys.run_debugger=0
 on property:vendor.boot_completed=1
     start cpu_gpu_utility
 
+on property:sys.boot_completed=1
+    start init-cancfg-sh
+
+service init-cancfg-sh /vendor/bin/init.cancfg.sh
+    class main
+    user root
+    group root system
+    oneshot
+

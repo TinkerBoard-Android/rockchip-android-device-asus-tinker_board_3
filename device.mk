@@ -72,6 +72,14 @@ PRODUCT_COPY_FILES += \
 BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/led
 
+ifeq ($(strip $(PRODUCT_ASUS_NAME)), RVMON7_CTRL_PCB)
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy/can
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/RVMON7_CTRL_PCB/init.cancfg.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.cancfg.sh
+endif
+
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml
 
