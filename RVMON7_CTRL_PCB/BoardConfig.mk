@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 include device/asus/tinker_board_3/BoardConfig.mk
-BUILD_WITH_GO_OPT := true
+BUILD_WITH_GO_OPT := false
 
 # AB image definition
 BOARD_USES_AB_IMAGE := false
