@@ -47,6 +47,9 @@ PRODUCT_PROPERTY_OVERRIDES += ro.wifi.sleep.power.down=true
 PRODUCT_PROPERTY_OVERRIDES += persist.wifi.sleep.delay.ms=0
 PRODUCT_PROPERTY_OVERRIDES += persist.bt.power.down=true
 
+# Disable surfaceflinger prime_shader cache to improve post boot memory.
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += service.sf.prime_shader_cache=0
+
 #boot animation
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bootanimation.zip:product/media/bootanimation.zip
