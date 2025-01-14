@@ -1,3 +1,9 @@
 #intf:pwm1=off
 #intf:pwm5=off
 conf:auto_ums=on
+cpu_governor=schedutil
+a55_minfreq=408000
+a55_maxfreq=1800000
+gpu_governor=simple_ondemand
+g52_minfreq=200000000
+g52_maxfreq=800000000

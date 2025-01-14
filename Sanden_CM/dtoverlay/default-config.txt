@@ -8,3 +8,9 @@
 #intf:spdif_8ch=on
 #intf:spi3=off
 #intf:i2s3_2ch=off
+cpu_governor=schedutil
+a55_minfreq=408000
+a55_maxfreq=1800000
+gpu_governor=simple_ondemand
+g52_minfreq=200000000
+g52_maxfreq=800000000
