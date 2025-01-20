@@ -3,6 +3,9 @@ on early-init
 on init
     # led
     start vendor.led
+    # ppid
+    start vendor.ppid
+
 on late-init
 on boot
     # For GPIO FAN
@@ -99,6 +102,13 @@ on property:vendor.asus_debugger_running=2
 
 on post-fs-data
 service vendor.led /vendor/bin/led.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+service vendor.ppid /vendor/bin/ppid.sh
     class main
     user root
     group root

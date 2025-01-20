@@ -137,6 +137,13 @@ PRODUCT_COPY_FILES += \
 BOARD_SEPOLICY_DIRS += \
     device/asus/tinker_board_3/sepolicy/led
 
+# ppid
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/ppid/ppid.sh:$(TARGET_COPY_OUT_VENDOR)/bin/ppid.sh
+
+BOARD_SEPOLICY_DIRS += \
+    device/asus/tinker_board_3/sepolicy/ppid
+
 # tty
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/tty/tty_init.sh:$(TARGET_COPY_OUT_VENDOR)/bin/tty_init.sh
