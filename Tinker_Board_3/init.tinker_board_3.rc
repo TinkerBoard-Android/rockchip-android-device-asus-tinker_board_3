@@ -4,6 +4,9 @@ on early-init
 on init
     # led
     start vendor.led
+    # ppid
+    start vendor.ppid
+
 on late-init
 
 on boot
@@ -41,6 +44,13 @@ on property:sys.boot_completed=1
     chmod 0664 /dev/cec0
 
 service vendor.led /vendor/bin/led.sh
+    class main
+    user root
+    group root
+    disabled
+    oneshot
+
+service vendor.ppid /vendor/bin/ppid.sh
     class main
     user root
     group root
