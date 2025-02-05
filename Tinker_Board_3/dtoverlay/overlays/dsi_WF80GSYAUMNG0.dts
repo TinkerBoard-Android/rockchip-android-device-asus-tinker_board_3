@@ -1,0 +1,47 @@
+/dts-v1/;
+/plugin/;
+/ {
+        compatible = "rockchip,rk3566";
+
+        fragment@0 {
+                target = <&pwm9>;
+                __overlay__ {
+                };
+        };
+        fragment@1 {
+                target = <&backlight>;
+                __overlay__ {
+                };
+        };
+        fragment@2 {
+                target = <&dsi0>;
+                __overlay__ {
+                        status = "okay";
+                        panel@0 {
+                                reset-gpios = <&gpio2 19 0>;
+                                wf80gsyaumng0-panel-exist;
+                                reset-high-delay-ms = <10>;
+                                reset-high2-delay-ms = <20>;
+                                reset-low-delay-ms = <1>;
+                        };
+                };
+        };
+        fragment@3 {
+                target = <&dsi0_in_vp1>;
+                __overlay__ {
+                        status = "okay";
+                };
+        };
+        fragment@4 {
+                target = <&pinctrl>;
+                __overlay__ {
+                        pinctrl-10 = <&mipi_reset>;
+                        gpio_init_config {
+                                mipi_reset: mipi_reset {
+                                        rockchip,pins =
+                                                <2 19 0 &pcfg_pull_none>;
+                                };
+                        };
+                };
+        };
+};
