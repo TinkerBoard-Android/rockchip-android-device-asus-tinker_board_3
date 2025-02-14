@@ -24,3 +24,6 @@ echo "$GPU_GOVERNOR" > /sys/class/devfreq/fde60000.gpu/governor
 echo "$A55_MIN_FREQ" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 sleep 0.05
 echo "$A55_MAX_FREQ" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+setprop persist.cpu.policy0.minfreq $A55_MIN_FREQ
+setprop persist.cpu.policy0.maxfreq $A55_MAX_FREQ
