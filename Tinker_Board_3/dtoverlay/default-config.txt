@@ -21,3 +21,5 @@
 #intf:pwm15=off
 #intf:xin32k=off
 conf:auto_ums=on
+cpu_governor=ondemand
+gpu_governor=simple_ondemand

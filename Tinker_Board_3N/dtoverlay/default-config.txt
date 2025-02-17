@@ -9,3 +9,5 @@
 #intf:spi3=off
 #intf:i2s3_2ch=off
 conf:auto_ums=on
+cpu_governor=schedutil
+gpu_governor=simple_ondemand
