@@ -11,8 +11,10 @@ CPU_GOVERNOR=`cat $CONFIG_FILE | grep cpu_governor | awk 'BEGIN {FS="="}; {print
 GPU_GOVERNOR=`cat $CONFIG_FILE | grep gpu_governor | awk 'BEGIN {FS="="}; {print $2}'`
 A55_MIN_FREQ=`cat $CONFIG_FILE | grep a55_minfreq | awk 'BEGIN {FS="="}; {print $2}'`
 A55_MAX_FREQ=`cat $CONFIG_FILE | grep a55_maxfreq | awk 'BEGIN {FS="="}; {print $2}'`
+G52_MIN_FREQ=`cat $CONFIG_FILE | grep g52_minfreq | awk 'BEGIN {FS="="}; {print $2}'`
+G52_MAX_FREQ=`cat $CONFIG_FILE | grep g52_maxfreq | awk 'BEGIN {FS="="}; {print $2}'`
 
-logi "CPU_GOVERNOR=$CPU_GOVERNOR, GPU_GOVERNOR=$GPU_GOVERNOR, A55_MIN_FREQ=$A55_MIN_FREQ, A55_MAX_FREQ=$A55_MAX_FREQ"
+logi "CPU_GOVERNOR=$CPU_GOVERNOR, GPU_GOVERNOR=$GPU_GOVERNOR, A55_MIN_FREQ=$A55_MIN_FREQ, A55_MAX_FREQ=$A55_MAX_FREQ, G52_MIN_FREQ=$G52_MIN_FREQ, G52_MAX_FREQ=$G52_MAX_FREQ"
 
 for governor in $(ls /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor)
 do
@@ -24,6 +26,12 @@ echo "$GPU_GOVERNOR" > /sys/class/devfreq/fde60000.gpu/governor
 echo "$A55_MIN_FREQ" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 sleep 0.05
 echo "$A55_MAX_FREQ" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+sleep 0.05
+echo "$G52_MIN_FREQ" > /sys/class/devfreq/fde60000.gpu/min_freq
+sleep 0.05
+echo "$G52_MAX_FREQ" > /sys/class/devfreq/fde60000.gpu/max_freq
 
 setprop persist.cpu.policy0.minfreq $A55_MIN_FREQ
 setprop persist.cpu.policy0.maxfreq $A55_MAX_FREQ
+setprop persist.gpu.minfreq $G52_MIN_FREQ
+setprop persist.gpu.maxfreq $G52_MAX_FREQ
