@@ -67,9 +67,10 @@ PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl android.hardware.gnss@1.0-service
 
 PRODUCT_COPY_FILES += \
+    device/asus/tinker_board_3/gps/arm64-v8a/gps.default.so:vendor/lib64/hw/gps.default.so \
     device/asus/tinker_board_3/gps/gps_cfg.inf:vendor/etc/gps_cfg.inf
 
-PRODUCT_PACKAGES += product_quectel_gps
+# PRODUCT_PACKAGES += product_quectel_gps
 
 
 ifeq ($(strip $(PRODUCT_NAME)), Tinker_Board_3N)
