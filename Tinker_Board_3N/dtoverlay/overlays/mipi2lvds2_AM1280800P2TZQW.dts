@@ -14,6 +14,7 @@
 		__overlay__ {
 			status = "okay";
 			panel-type = "LVDS";
+			minimal-brightness-level = <30>;
 		};
 	};
 	fragment@2 {
