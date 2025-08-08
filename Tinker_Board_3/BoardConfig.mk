@@ -42,3 +42,4 @@ PRODUCT_FSTAB_TEMPLATE := device/asus/tinker_board_3/Tinker_Board_3/fstab.in
 
 TARGET_ROCKCHIP_PCBATEST := false
 
+BOARD_SUPPORT_MODEM := false
