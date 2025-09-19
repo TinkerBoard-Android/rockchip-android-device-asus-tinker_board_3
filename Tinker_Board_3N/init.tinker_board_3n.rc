@@ -55,6 +55,15 @@ on property:sys.boot_completed=1
     #HDMI CEC
     chown root system /dev/cec0
     chmod 0664 /dev/cec0
+    start kiosk_set_do
+
+service kiosk_set_do /system/bin/sh /system/bin/kiosk_set_do.sh
+    class late_start
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+    oneshot
+    disabled
 
 service vendor.led /vendor/bin/led.sh
     class main

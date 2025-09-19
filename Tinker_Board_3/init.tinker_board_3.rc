@@ -70,6 +70,17 @@ on boot
 
     setprop vendor.asus_debugger_running 0
 
+on property:sys.boot_completed=1
+    start kiosk_set_do
+
+service kiosk_set_do /system/bin/sh /system/bin/kiosk_set_do.sh
+    class late_start
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+    oneshot
+    disabled
+
 # asus-debugger-d
 service asus-dbug-d /vendor/bin/asus-debugger-d
     user root

@@ -130,6 +130,10 @@ BOARD_SEPOLICY_DIRS += \
 
 endif
 
+# kiosk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/kiosk/kiosk_set_do.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/kiosk_set_do.sh
+
 # led
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/led/led.sh:$(TARGET_COPY_OUT_VENDOR)/bin/led.sh
