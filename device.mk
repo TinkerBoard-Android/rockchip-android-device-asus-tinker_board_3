@@ -65,6 +65,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/package_performance.xml:$(TARGET_COPY_OUT_ODM)/etc/package_performance.xml \
     $(TARGET_DEVICE_DIR)/media_profiles_default.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml\
 
+# kiosk
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/kiosk/kiosk_set_do.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/kiosk_set_do.sh
+
 # led
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/led/led.sh:$(TARGET_COPY_OUT_VENDOR)/bin/led.sh

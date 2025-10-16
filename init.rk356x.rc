@@ -13,6 +13,17 @@ on property:sys.boot_completed=1
 
     write /sys/class/devfreq/dmc/governor dmc_ondemand
 
+    # kiosk
+    start kiosk_set_do
+
+service kiosk_set_do /system/bin/sh /system/bin/kiosk_set_do.sh
+    class late_start
+    user shell
+    group shell log readproc
+    seclabel u:r:shell:s0
+    oneshot
+    disabled
+
 on charger
     chown system system /sys/class/devfreq/ff400000.gpu/governor
     chown system system /sys/class/devfreq/ff400000.gpu/min_freq
