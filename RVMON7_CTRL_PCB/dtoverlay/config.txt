@@ -1,7 +1,12 @@
 ##### Hardware Interface Config #####
 
+## Note: When there is any PIN conflict, enable the latter setting.  ##
+## |   PIN   | ALT Fun 1 | ALT Fun 2 | ##
+## | GPIO0C0 |      pwm1 |     uart0 | ##
+
 #intf:pwm1=off
 #intf:pwm5=off
+#intf:uart0=off
 
 ##### Driver Config #####
 
