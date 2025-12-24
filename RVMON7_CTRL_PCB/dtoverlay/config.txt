@@ -6,7 +6,7 @@
 
 #intf:pwm1=off
 #intf:pwm5=off
-#intf:uart0=off
+intf:uart0=on
 
 ##### Driver Config #####
 
