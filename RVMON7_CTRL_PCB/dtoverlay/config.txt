@@ -14,7 +14,7 @@ intf:uart0=on
 
 conf:auto_ums=on
 
-##### Tinker Power Management #####
+##### System Power Management #####
 
 cpu_governor=schedutil
 a55_minfreq=408000
